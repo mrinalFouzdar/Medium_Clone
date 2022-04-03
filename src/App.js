@@ -1,5 +1,5 @@
 import "./App.css";
-import OurStorymain from "./Components/OurStoryPage/OurStorypart/OurStorymain";
+import OurStorymain from "./Components/OurStoryPage/OurStorymain";
 
 function App() {
   return <div className="App">
