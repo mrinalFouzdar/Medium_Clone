@@ -14,6 +14,16 @@ const AccessButton = styled.button`
   font-style: bold;
   border: 1px solid #fff;
   border-radius: 20px;
+  &:hover {
+    background: transparent;
+  }
+`;
+const CyanAccessButton = styled(AccessButton)`
+  background: black;
+  color: #fff;
+  &:hover {
+    background: #222;
+  }
 `;
 const Bluediv = styled.div`
   box-sizing: border-box;
@@ -29,7 +39,6 @@ const Bluediv = styled.div`
 `;
 const HeadingCustom = styled.h1`
   font-size: 6vw;
-  color: #fff;
   line-height: 100%;
   font-weight: 400;
 `;
@@ -58,6 +67,13 @@ const Para2 = styled.p`
   line-height: 127%;
   text-align: left;
 `;
+const Cyan = styled(Bluediv)`
+  background-color: #bcdfff;
+  color: #000;
+  flex-direction: column;
+  height: 70vh;
+  border: 1.5px solid black;
+`;
 export const HeroBlue = ({ heading, description1, description2 }) => {
   return (
     <>
@@ -82,6 +98,7 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
                 flexWrap: "wrap",
                 flexDirection: "column",
                 alignItems: "flex-start",
+                justifyContent: "space-between",
                 margin: "4%",
                 borderRight: "1px solid #fff",
               }}
@@ -90,10 +107,11 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
                 style={{
                   lineHeight: "100%",
                   letterSpacing: "-0.56px",
+                  textAlign: "left",
                 }}
               >
                 {" "}
-                Get unlimited access to every story.
+                Get unlimited access to every <br /> story.
               </h1>
               <img
                 src="https://cdn-static-1.medium.com/sites/medium.com/membership/images/UnlimitedReading.svg"
@@ -119,6 +137,7 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
                 flexDirection: "column",
                 alignItems: "flex-start",
                 margin: "3%",
+                justifyContent: "space-between",
               }}
             >
               <h1
@@ -142,6 +161,20 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
           </Box>
         </div>
       </Bluediv2>
+      <Cyan>
+        <div>
+          <HeadingCustom>
+            Take your mind
+            <br />
+            in new directions.
+          </HeadingCustom>
+          <CyanAccessButton>Get unlimited Access</CyanAccessButton>
+        </div>
+        <img
+          src="https://cdn-static-1.medium.com/sites/medium.com/membership/images/Membership_Footer.svg"
+          alt=""
+        />
+      </Cyan>
     </>
   );
 };
