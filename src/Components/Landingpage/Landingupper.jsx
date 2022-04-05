@@ -3,8 +3,8 @@ import styles from "../../styles/Landingpage.module.css";
 import { Button } from "../Button/Button";
 import styled from "styled-components";
 export const Landingupper = () => {
-  console.log(styled);
-  console.log(<Button />);
+  // console.log(styled);
+  // console.log(<Button />);
   return (
     <div className={styles.lu1}>
       <div className={styles.lu2}>
