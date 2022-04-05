@@ -41,6 +41,7 @@ const HeadingCustom = styled.h1`
   font-size: 6vw;
   line-height: 100%;
   font-weight: 400;
+  font-family: "Gt super text book", Georgia, sans-serif;
 `;
 const Para = styled.p`
   font-weight: 600;
