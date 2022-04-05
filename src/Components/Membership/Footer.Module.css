@@ -6,6 +6,7 @@
   box-sizing: border-box;
   padding-left: 5%;
   padding-right: 5%;
+  height: 10vh;
 }
 .list-group {
   display: flex;
