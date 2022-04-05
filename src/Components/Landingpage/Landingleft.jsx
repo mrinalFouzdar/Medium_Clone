@@ -5,12 +5,12 @@ export const Landingleft = () => {
   const [ldata, setLdata] = React.useState([]);
   const [adata, setAdata] = React.useState([]);
   React.useEffect(() => {
-    // fetch(
-    //   `http://api.mediastack.com/v1/news?access_key=b3c4fdcbc5ebc5a8acb86fa26a211a2b&limit=100&languages=en`
-    // )
-    //   .then((res) => res.json())
-    //   .then((res) => setLdata(res.data))
-    //   .catch((err) => console.log(err));
+    fetch(
+      `http://api.mediastack.com/v1/news?access_key=b3c4fdcbc5ebc5a8acb86fa26a211a2b&limit=100&languages=en`
+    )
+      .then((res) => res.json())
+      .then((res) => setLdata(res.data))
+      .catch((err) => console.log(err));
     fetch(
       `https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=5a917577b74147bbbf783b3f25e3807b`
     )
@@ -37,10 +37,8 @@ export const Landingleft = () => {
 
   return (
     <div className={styles.ll1}>
-      {adata.map((eblog) =>
+      {ldata.map((eblog) =>
         eblog.image == null ? null : (
-          //   eblog.image? null:`$()`
-          // { (eblog.image==null)? return: null}
           <div className={styles.ll2}>
             <div className={styles.ll3}>
               <div className={styles.ll4}>
