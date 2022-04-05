@@ -15,6 +15,7 @@ import styled from "styled-components"
     padding: 120px 0px;
     line-height: 2.9rem;
     color: rgb(51, 51, 51); 
+    text-align: center;
   
  `
  const Span = styled.span`

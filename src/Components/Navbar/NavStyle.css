@@ -1,0 +1,8 @@
+.nav_logo {
+    height: 28px;
+    width: 200px;
+    fill: rgba(0, 0, 0, 1);
+    margin-left: 40px;
+    cursor: pointer;
+    border: 1px solid black;
+  }
