@@ -1,12 +1,12 @@
-import "./App.css";
-import { Landingpage } from "./Components/Landingpage/Landingpage.jsx";
+import React from "react";
+import { Landingpage } from "./Components/Landingpage/Landingpage";
 
-function App() {
+const App = () => {
   return (
     <div>
       <Landingpage />
     </div>
   );
-}
+};
 
 export default App;
