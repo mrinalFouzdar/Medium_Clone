@@ -1,14 +1,12 @@
-import "./App.css";
-import OurStorymain from "./Components/OurStoryPage/OurStorymain";
-import Membership from "./Components/Membership/Membership";
+import React from "react";
+import { Landingpage } from "./Components/Landingpage/Landingpage";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      {/* <OurStorymain /> */}
-      <Membership />
+    <div>
+      <Landingpage />
     </div>
   );
-}
+};
 
 export default App;

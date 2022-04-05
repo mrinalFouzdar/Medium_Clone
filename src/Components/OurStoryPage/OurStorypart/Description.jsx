@@ -54,6 +54,7 @@ const Iframe= styled.iframe`
     width:400px ;
     height:500px ;
     border:none ;
+    margin-left:40px;
 `
 
 
