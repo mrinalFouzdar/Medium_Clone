@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Footer from "./Footer";
 const AccessButton = styled.button`
   font-family: "Soehne web buch", sans-serif;
   background: #fff;
@@ -52,7 +53,6 @@ const Bluediv2 = styled.div`
   color: #fff;
   border-bottom: 1px solid #fff;
   height: 60vh;
-  height: 60vh;
   display: flex;
 `;
 const Box = styled.div`
@@ -72,7 +72,7 @@ const Cyan = styled(Bluediv)`
   background-color: #bcdfff;
   color: #000;
   flex-direction: column;
-  height: 70vh;
+  height: 72vh;
   border: 1.5px solid black;
 `;
 export const HeroBlue = ({ heading, description1, description2 }) => {
@@ -162,6 +162,7 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
           </Box>
         </div>
       </Bluediv2>
+
       <Cyan>
         <div>
           <HeadingCustom>
@@ -176,6 +177,7 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
           alt=""
         />
       </Cyan>
+      <Footer />
     </>
   );
 };
