@@ -1,0 +1,9 @@
+.left-box {
+  width: 70%;
+}
+.main-write-box {
+  display: flex;
+}
+.right-box {
+  width: 30%;
+}

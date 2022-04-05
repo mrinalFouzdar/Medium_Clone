@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Footer from "./Footer";
-const AccessButton = styled.button`
+export const AccessButton = styled.button`
   font-family: "Soehne web buch", sans-serif;
   background: #fff;
   font-size: 22px;
@@ -26,7 +26,7 @@ const CyanAccessButton = styled(AccessButton)`
     background: #222;
   }
 `;
-const Bluediv = styled.div`
+export const Bluediv = styled.div`
   box-sizing: border-box;
   background-color: #4479ff;
   color: #fff;
@@ -38,13 +38,13 @@ const Bluediv = styled.div`
   padding-top: 2%;
   padding-bottom: 4%;
 `;
-const HeadingCustom = styled.h1`
+export const HeadingCustom = styled.h1`
   font-size: 6vw;
   line-height: 100%;
   font-weight: 400;
   font-family: "Gt super text book", Georgia, sans-serif;
 `;
-const Para = styled.p`
+export const Para = styled.p`
   font-weight: 600;
 `;
 const Bluediv2 = styled.div`
