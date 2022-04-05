@@ -5,8 +5,8 @@ import Membership from "./Components/Membership/Membership";
 function App() {
   return (
     <div className="App">
-      {/* <OurStorymain /> */}
-      <Membership />
+      <OurStorymain />
+      {/* <Membership /> */}
     </div>
   );
 }
