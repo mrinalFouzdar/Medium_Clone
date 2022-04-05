@@ -1,10 +1,11 @@
 import React from "react";
-import { Landingpage } from "./Components/Landingpage/Landingpage";
-
+import { Signup } from "./Components/Loginpage/Signup";
+// import { Landingpage } from "./Components/Landingpage/Landingpage";
+import { Login } from "./Components/Loginpage/Login";
 const App = () => {
   return (
     <div>
-      <Landingpage />
+      <Signup />
     </div>
   );
 };
