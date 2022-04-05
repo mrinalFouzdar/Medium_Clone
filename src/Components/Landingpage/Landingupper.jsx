@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "../../styles/Landingpage.module.css";
-import { Button } from "../Button/Button";
-import styled from "styled-components";
+
 export const Landingupper = () => {
   // console.log(styled);
   // console.log(<Button />);
