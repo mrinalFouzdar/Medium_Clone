@@ -87,3 +87,30 @@
   padding: 1%;
   box-sizing: border-box;
 }
+.acord {
+  background-color: #222;
+  color: white;
+}
+.acord-head {
+  padding-left: 3%;
+  padding-bottom: 10%;
+  padding-top: 5%;
+}
+.acord-bottom {
+  margin-bottom: 20px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  padding-right: 3%;
+  font-family: "Soehne web buch", sans-serif;
+  font-weight: 400;
+}
+.bottom-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+.bot-btn {
+  height: 50px;
+}

@@ -15,6 +15,7 @@ export const AccessButton = styled.button`
   font-style: bold;
   border: 1px solid #fff;
   border-radius: 20px;
+  margin-top: 2%;
   &:hover {
     background: transparent;
   }
@@ -42,6 +43,7 @@ export const HeadingCustom = styled.h1`
   font-size: 6vw;
   line-height: 100%;
   font-weight: 400;
+  padding-bottom: 3%;
   font-family: "Gt super text book", Georgia, sans-serif;
 `;
 export const Para = styled.p`
@@ -79,7 +81,11 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
   return (
     <>
       <Bluediv>
-        <div>
+        <div
+          style={{
+            textAlign: "center",
+          }}
+        >
           <HeadingCustom>{heading}</HeadingCustom>
           <Para>{description1}</Para>
           <Para>{description2}</Para>
@@ -109,6 +115,7 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
                   lineHeight: "100%",
                   letterSpacing: "-0.56px",
                   textAlign: "left",
+                  paddingBottom: "3%",
                 }}
               >
                 {" "}
@@ -117,6 +124,9 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
               <img
                 src="https://cdn-static-1.medium.com/sites/medium.com/membership/images/UnlimitedReading.svg"
                 alt=""
+                style={{
+                  marginBottom: "3%",
+                }}
               />
               <Para2>
                 Read any article in our entire library across all your devices —
@@ -146,6 +156,7 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
                   lineHeight: "100%",
                   letterSpacing: "-0.56px",
                   textAlign: "left",
+                  paddingBottom: "3%",
                 }}
               >
                 Support the voices you want to hear <br></br>more from.
@@ -153,6 +164,9 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
               <img
                 src="https://cdn-static-1.medium.com/sites/medium.com/membership/images/SupportWriters.svg"
                 alt=""
+                style={{
+                  marginBottom: "3%",
+                }}
               />
               <Para2>
                 Read any article in our entire library across all your devices —
@@ -164,7 +178,11 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
       </Bluediv2>
 
       <Cyan>
-        <div>
+        <div
+          style={{
+            textAlign: "center",
+          }}
+        >
           <HeadingCustom>
             Take your mind
             <br />
