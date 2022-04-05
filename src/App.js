@@ -1,14 +1,12 @@
 import React from "react";
+import { Signup } from "./Components/Loginpage/Signup";
 import { Landingpage } from "./Components/Landingpage/Landingpage";
-import { Write } from "./Components/Write/Write";
-import Membership from "./Components/Membership/Membership";
-
+import { Login } from "./Components/Loginpage/Login";
 const App = () => {
   return (
     <div>
-      {/* <Landingpage /> */}
-      <Write />
-      {/* <Membership /> */}
+      <Login />
+      <Landingpage />
     </div>
   );
 };
