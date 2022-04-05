@@ -5,7 +5,7 @@ import { Login } from "./Components/Loginpage/Login";
 const App = () => {
   return (
     <div>
-      <Signup />
+      <Login />
     </div>
   );
 };
