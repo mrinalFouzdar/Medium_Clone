@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { setDisplay } from "../../Redux/Theme/action.js";
 
-const Nav = styled.div`
+let Nav = styled.div`
   display: ${(props) => (props.vis === true ? "flex" : "none")};
   height: 80px;
   position: sticky;
@@ -24,6 +24,7 @@ const Nav = styled.div`
       : "1px solid black"};
 
   background: ${(props) => (props.color ? props.color : "white")};
+  transition: background-color 300ms linear;
   .fDiv {
     padding-left: 60px;
     padding-right: 60px;
@@ -75,27 +76,39 @@ const StyledLinklast = styled(Link)`
 export default function Navbar() {
   // ******************REDUX**********************
   const dispatch = useDispatch();
-  // const [tdata, setTdata] = React.useState(true);
 
-  // ******************************************
-  // console.log(tdata);
   const [color, setNavBg] = React.useState("white");
-  // const [vis, setVis] = React.useState("flex");
+  const [newcolor, setNewcolor] = React.useState("white");
+
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 600) {
+      // setColorchange(true);
+
+      setNavBg("white");
+      // Nav.setAttribute("tran");
+    } else {
+      setNavBg(newcolor);
+    }
+  };
+  window.addEventListener("scroll", changeNavbarColor);
   const location = useLocation();
   // console.log(location)
   React.useEffect(() => {
     // console.log(window.location.pathname)
     if (window.location.pathname === "/") {
       setNavBg("#C4E2FF");
+      setNewcolor("#C4E2FF");
       dispatch(setDisplay(true));
     } else if (location.pathname === "/memberShip") {
       setNavBg("rgb(68, 121, 255)");
       // console.log(vis);
+      setNewcolor("rgb(68, 121, 255)");
       dispatch(setDisplay(true));
     } else if (location.pathname === "/write") {
       dispatch(setDisplay(true));
 
       setNavBg("rgb(242, 77, 46)");
+      setNewcolor("rgb(242, 77, 46)");
     } else if (location.pathname === "/logIn") {
       dispatch(setDisplay(false));
     } else if (location.pathname === "/StartIn") {
@@ -105,6 +118,7 @@ export default function Navbar() {
     } else {
       setNavBg("white");
       dispatch(setDisplay(true));
+      setNewcolor("white");
     }
   }, [location]);
   const { vis } = useSelector((state) => state.vis);

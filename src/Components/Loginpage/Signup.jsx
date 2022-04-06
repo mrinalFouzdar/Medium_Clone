@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "../../styles/Signup.module.css";
 import { GoogleLogin } from "react-google-login";
-import { useDispatch, useSelector } from "react-redux";
-import { isAuthorized } from "../../Redux/IsAuth/action.js";
+
+// import { isAuthorized } from "../../Redux/IsAuth/action.js";
 import { saveData, loadData } from "../../Localstorage";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setDisplay } from "../../Redux/Theme/action.js";
 
 export const Signup = () => {
   if (loadData("user") === null) {
@@ -14,14 +16,15 @@ export const Signup = () => {
     saveData("userDetails", []);
   }
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const onLoginsucces = (res) => {
     let edata = res.profileObj.email;
     let user = loadData("user");
     user.push(edata);
     saveData("user", user);
     alert("Register succesfull");
-    navigate("/LogIn");
+    dispatch(setDisplay(false));
+    navigate("/logIn");
   };
   const onFailuresucces = (res) => {
     alert("Facing Issues");

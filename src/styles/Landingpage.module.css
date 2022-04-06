@@ -122,12 +122,11 @@
 .t5 {
   display: flex;
   max-width: 100%;
-
   padding-right: 16px;
-
   margin-right: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   box-sizing: inherit;
+  overflow: hidden;
   justify-content: space-between;
 }
 .t6 {
@@ -229,12 +228,13 @@
 }
 .landingPageBottom_div_right {
   height: 400px;
-  padding: 20px;
-  padding-left: 80px;
+  margin-left: 100px;
+  padding: 10px;
+  padding-left: 50px;
   width: 70vw;
   position: sticky;
-  z-index: 100;
-  top: 40px;
+  /* z-index: 100; */
+  top: 100px;
 }
 .landingPageBottom_div_right {
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -246,8 +246,8 @@
 }
 .landingPageBottom_div_right > h5 {
   text-transform: uppercase;
-  color: rgba(41, 41, 41, 1);
-  font-size: 14px;
+  color: black;
+  font-size: 12px;
   font-weight: 700;
 }
 .landingPageBottom_div_right_bottom {
@@ -289,7 +289,8 @@
   margin-left: 40px;
   margin-top: -20px;
   display: grid;
-  grid-template-columns: 65% 30%;
+
+  grid-template-columns: 70% 30%;
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 65px;
@@ -313,7 +314,7 @@
 }
 .ll41 > img {
   position: relative;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   cursor: pointer;
   width: 25px;
   height: 25px;
@@ -332,7 +333,7 @@
 }
 .ll6 {
   margin: 0px;
-  margin-top: -10px;
+  /* margin-top: -10px; */
   box-sizing: border-box;
   font-size: 16px;
   line-height: 20px;
@@ -358,9 +359,10 @@
 }
 .ll8 > img {
   width: 28vh;
-  height: 95%;
+  height: 20vh;
   max-height: 180px;
-  background-image: url(https://bitsofco.de/content/images/2018/12/broken-1.png);
+  object-fit: contain;
+  /* background-image: url(https://bitsofco.de/content/images/2018/12/broken-1.png); */
   /* background-position: -10px -20px; */
   background-size: cover;
 }
