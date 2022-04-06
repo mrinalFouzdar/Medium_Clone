@@ -1,0 +1,26 @@
+.navbar {
+  width: 100px;
+  height: 100vh;
+  box-shadow: 2px 2px 2px 1px whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  border-right: 1px solid #dcdcdc;
+}
+.list-icons {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.icons {
+  width: 300px;
+  height: 25px;
+  margin-top: 10%;
+  cursor: pointer;
+  color: #231f20;
+}
+.first-box {
+  margin-top: 20%;
+}
