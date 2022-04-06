@@ -14,7 +14,7 @@ const App = () => {
       {/* <Landingpage /> */}
       {/* <OurStorymain/> */}
       {/* <Login/> */}
-      <Navbar />
+      {/* <Navbar />
       <Routes>
         <Route path="/" element={<Landingpage />} />
         <Route path="/ourStory" element={<OurStorymain />} />
@@ -22,8 +22,8 @@ const App = () => {
         <Route path="/write" element={<Write />} />
         <Route path="/logIn" element={<Login />} />
         <Route path="/startIn" element={<Login />} />
-      </Routes>
-      {/* <WriteBlog/> */}
+      </Routes> */}
+      <WriteBlog/>
     </div>
   );
 };
