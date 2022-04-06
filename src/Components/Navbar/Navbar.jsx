@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
+<<<<<<< HEAD
 
 const Nav = styled.div`
   height: 85px;
@@ -26,15 +27,53 @@ const Nav = styled.div`
     padding-right: 60px;
   }
 
+=======
+import { useDispatch, useSelector } from "react-redux";
+import { setDisplay } from "../../Redux/Theme/action.js";
+
+let Nav = styled.div`
+  display: ${(props) => (props.vis === true ? "flex" : "none")};
+  height: 80px;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+
+  /* justify-content: space-between; */
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 100px;
+  padding-right: 100px;
+  /* border-bottom:1px solid black ; */
+  border-bottom: ${(props) =>
+    props.color === "rgb(68, 121, 255)"
+      ? "1px solid white"
+      : "1px solid black"};
+
+  background: ${(props) => (props.color ? props.color : "white")};
+  transition: background-color 300ms linear;
+  .fDiv {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+>>>>>>> f0aec763520f1b9111e471a87fc1dc5714660c45
   .sDiv {
     display: flex;
     margin-left: auto;
   }
   .childDiv {
+<<<<<<< HEAD
     margin: 0vw 2vw 0vw 2vw;
   }
   .childLast {
     width: 130px;
+=======
+    margin: 0vw 1.5vw 0vw 1.5vw;
+  }
+  .childLast {
+    width: 120px;
+>>>>>>> f0aec763520f1b9111e471a87fc1dc5714660c45
     background-color: black;
     padding: 5px;
     /* padding-left:34px ; */
@@ -70,6 +109,7 @@ const StyledLinklast = styled(Link)`
 `;
 
 export default function Navbar() {
+<<<<<<< HEAD
   const [color, setNavBg] = React.useState("white");
   const location = useLocation();
   React.useEffect(() => {
@@ -91,6 +131,63 @@ export default function Navbar() {
         <div className="fDiv">
           <StyledLink to="/">
             <svg class="svgIcon-use" height="25" viewBox="0 0 3940 610">
+=======
+  // ******************REDUX**********************
+  const dispatch = useDispatch();
+
+  const [color, setNavBg] = React.useState("white");
+  const [newcolor, setNewcolor] = React.useState("white");
+
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 600) {
+      // setColorchange(true);
+
+      setNavBg("white");
+      // Nav.setAttribute("tran");
+    } else {
+      setNavBg(newcolor);
+    }
+  };
+  window.addEventListener("scroll", changeNavbarColor);
+  const location = useLocation();
+  // console.log(location)
+  React.useEffect(() => {
+    // console.log(window.location.pathname)
+    if (window.location.pathname === "/") {
+      setNavBg("#C4E2FF");
+      setNewcolor("#C4E2FF");
+      dispatch(setDisplay(true));
+    } else if (location.pathname === "/memberShip") {
+      setNavBg("rgb(68, 121, 255)");
+      // console.log(vis);
+      setNewcolor("rgb(68, 121, 255)");
+      dispatch(setDisplay(true));
+    } else if (location.pathname === "/write") {
+      dispatch(setDisplay(true));
+
+      setNavBg("rgb(242, 77, 46)");
+      setNewcolor("rgb(242, 77, 46)");
+    } else if (location.pathname === "/logIn") {
+      dispatch(setDisplay(false));
+    } else if (location.pathname === "/StartIn") {
+      dispatch(setDisplay(false));
+    } else if (location.pathname === "/register") {
+      dispatch(setDisplay(false));
+    } else {
+      setNavBg("white");
+      dispatch(setDisplay(true));
+      setNewcolor("white");
+    }
+  }, [location]);
+  const { vis } = useSelector((state) => state.vis);
+
+  return (
+    <>
+      <Nav color={color} vis={vis}>
+        <div className="fDiv">
+          <StyledLink to="/">
+            <svg className="svgIcon-use" height="25" viewBox="0 0 3940 610">
+>>>>>>> f0aec763520f1b9111e471a87fc1dc5714660c45
               <path d="M594.79 308.2c0 163.76-131.85 296.52-294.5 296.52S5.8 472 5.8 308.2 137.65 11.69 300.29 11.69s294.5 132.75 294.5 296.51"></path>
               <path d="M917.86 308.2c0 154.16-65.93 279.12-147.25 279.12s-147.25-125-147.25-279.12S689.29 29.08 770.61 29.08s147.25 125 147.25 279.12"></path>
               <path d="M1050 308.2c0 138.12-23.19 250.08-51.79 250.08s-51.79-112-51.79-250.08 23.19-250.08 51.8-250.08S1050 170.09 1050 308.2"></path>

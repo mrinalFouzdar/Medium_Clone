@@ -4,15 +4,21 @@ import { GoogleLogin } from "react-google-login";
 import { useDispatch, useSelector } from "react-redux";
 import { isAuthorized } from "../../Redux/IsAuth/action.js";
 import { saveData, loadData } from "../../Localstorage";
+import { useNavigate } from "react-router-dom";
+
 export const Login = () => {
   if (loadData("user") === null) {
     saveData("user", []);
   }
+  if (loadData("useDetails") === null) {
+    saveData("userDetails", []);
+  }
 
+  const navigate = useNavigate();
   // const [showlogin, setShowLogin] = React.useState(true);
   // const [showLogout, setShowLogout] = React.useState(false);
-  const kuchv = useSelector((state) => state.IsAuth);
-  console.log(kuchv);
+  const AuthDetails = useSelector((state) => state.IsAuth);
+  // console.log(AuthDetails);
   const dispatch = useDispatch();
   const onLoginsucces = (res) => {
     let user = loadData("user");
@@ -24,25 +30,38 @@ export const Login = () => {
     // saveData("user", user);
     // setShowLogin(false);
     // console.log(showlogin);
-
-    dispatch(isAuthorized(true));
+    let userDetails = loadData("userDetails");
+    userDetails.push(res.profileObj);
+    saveData("userDetails", userDetails);
     // setShowLogout(true);
-    console.log(loadData("user"));
+    console.log(userDetails);
     user.map((eachuser) =>
       eachuser === res.profileObj.email
-        ? alert("login successfull")
+        ? (navigate("/"), dispatch(isAuthorized(true)), alert("succesful"))
         : alert("Register")
     );
+    // console.log(AuthDetails);
   };
   const onFailuresucces = (res) => {
     console.log("login Failed", res);
     // setShowLogin(true);
     // setShowLogout(false);
   };
-
+  const logsin = () => {
+    navigate("/register");
+  };
+  const closesign = () => {
+    navigate("/");
+  };
+  console.log(AuthDetails);
   return (
     <div className={styles.login1}>
       <div className={styles.login2}>
+        <div>
+          <span className={styles.close} onClick={closesign}>
+            +
+          </span>
+        </div>
         <div className={styles.login3}>
           <h2>Welcome Back</h2>
         </div>
@@ -129,7 +148,7 @@ export const Login = () => {
           </div>
           <div className={styles.login42}>
             <p>No account?</p>
-            <button>
+            <button onClick={logsin}>
               <b>Create one</b>
             </button>
           </div>
