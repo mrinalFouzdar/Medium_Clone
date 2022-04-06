@@ -3,8 +3,9 @@
   justify-items: center;
   text-align: center;
   /* justify-content: center; */
-  position: relative;
+  /* position: absolute; */
   min-height: 700px;
+  background: none;
 
   margin: auto;
   margin-top: 20px;
@@ -15,6 +16,16 @@
   box-sizing: border-box;
 
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+}
+.close {
+  position: absolute;
+  top: 5;
+
+  font-size: 40px;
+  color: black;
+  transform: rotate(45deg);
+  cursor: pointer;
+  margin-left: 20vw;
 }
 .login1 {
   /* justify-content: center; */

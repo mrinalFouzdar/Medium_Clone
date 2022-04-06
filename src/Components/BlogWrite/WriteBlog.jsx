@@ -1,5 +1,7 @@
 import React from 'react'
 import { GrAdd } from "react-icons/gr"
+import { useDispatch, useSelector } from 'react-redux'
+import {getBlog} from "../../Redux/blogre/action"
 import styled from 'styled-components'
 
 const Div= styled.div`
@@ -62,6 +64,10 @@ export default function WriteBlog() {
         story:""
     })
 
+    const dispatch = useDispatch()
+    const blog1=useSelector(store=>store.bologsData)
+    console.log(blog1)
+
     const handelBlog=(e)=>{
         // console.log(e.target.value)
         const {name,value}=e.target;
@@ -69,6 +75,18 @@ export default function WriteBlog() {
             ...blog,
             [name]:value
         })
+    }
+
+    // update Redux
+
+    const uptdateRedux=()=>{
+        fetch(`http://localhost:3001/blog`)
+        .then((res)=>res.json())
+        .then((res)=>{
+            // console.log(res)
+            dispatch(getBlog(res))
+        })
+        .catch((err)=>console.log(err))
     }
 
    const handleSubmit=(e)=>{
@@ -81,7 +99,9 @@ export default function WriteBlog() {
            }
        })
        .then((res)=>res.json())
-       .then((res)=>console.log(res))
+       .then((res)=>{
+        uptdateRedux()
+       })
    }
     const {fileUpload,title,story}=blog
   return (

@@ -1,19 +1,36 @@
 import React from "react";
 import styles from "../../styles/Signup.module.css";
 import { GoogleLogin } from "react-google-login";
+
+// import { isAuthorized } from "../../Redux/IsAuth/action.js";
+import { saveData, loadData } from "../../Localstorage";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setDisplay } from "../../Redux/Theme/action.js";
+
 export const Signup = () => {
-  const [showlogin, setShowLogin] = React.useState(true);
-  // const [showLogout, setShowLogout] = React.useState(false);
+  if (loadData("user") === null) {
+    saveData("user", []);
+  }
+  if (loadData("useDetails") === null) {
+    saveData("userDetails", []);
+  }
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const onLoginsucces = (res) => {
-    console.log("Login succes", res.profileObj);
-    setShowLogin(false);
-    console.log(showlogin);
-    // setShowLogout(true);
+    let edata = res.profileObj.email;
+    let user = loadData("user");
+    user.push(edata);
+    saveData("user", user);
+    alert("Register succesfull");
+    dispatch(setDisplay(false));
+    navigate("/logIn");
   };
   const onFailuresucces = (res) => {
-    console.log("login Failed", res);
-    setShowLogin(true);
-    // setShowLogout(false);
+    alert("Facing Issues");
+  };
+  const handlesign = () => {
+    navigate("/logIn");
   };
   return (
     <div className={styles.sp1}>
@@ -92,7 +109,7 @@ export const Signup = () => {
         </div>
         <div className={styles.sp8}>
           <p>Already have an account?</p>
-          <button>
+          <button onClick={handlesign}>
             <b>Sign In</b>
           </button>
         </div>

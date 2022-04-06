@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
 export const AccessButton = styled.button`
   font-family: "Soehne web buch", sans-serif;
   background: #fff;
@@ -78,6 +79,10 @@ const Cyan = styled(Bluediv)`
   border: 1.5px solid black;
 `;
 export const HeroBlue = ({ heading, description1, description2 }) => {
+  let navigate = useNavigate();
+  const getUnlimited = () => {
+    navigate("/logIn");
+  };
   return (
     <>
       <Bluediv>
@@ -89,7 +94,9 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
           <HeadingCustom>{heading}</HeadingCustom>
           <Para>{description1}</Para>
           <Para>{description2}</Para>
-          <AccessButton>Get Unlimited access</AccessButton>
+          <AccessButton onClick={getUnlimited}>
+            Get Unlimited access
+          </AccessButton>
         </div>
       </Bluediv>
       <Bluediv2>
