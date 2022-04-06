@@ -12,7 +12,7 @@ import styled from "styled-components"
     justify-content:center ;
     align-items:center ;
     width:100% ;
-    padding: 120px 0px;
+    padding: 100px 0px 100px 0px;
     line-height: 2.9rem;
     color: rgb(51, 51, 51); 
     text-align: center;

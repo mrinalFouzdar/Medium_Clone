@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-const AccessButton = styled.button`
+import Footer from "./Footer";
+export const AccessButton = styled.button`
   font-family: "Soehne web buch", sans-serif;
   background: #fff;
   font-size: 22px;
@@ -14,6 +15,7 @@ const AccessButton = styled.button`
   font-style: bold;
   border: 1px solid #fff;
   border-radius: 20px;
+  margin-top: 2%;
   &:hover {
     background: transparent;
   }
@@ -25,7 +27,7 @@ const CyanAccessButton = styled(AccessButton)`
     background: #222;
   }
 `;
-const Bluediv = styled.div`
+export const Bluediv = styled.div`
   box-sizing: border-box;
   background-color: #4479ff;
   color: #fff;
@@ -37,13 +39,14 @@ const Bluediv = styled.div`
   padding-top: 2%;
   padding-bottom: 4%;
 `;
-const HeadingCustom = styled.h1`
+export const HeadingCustom = styled.h1`
   font-size: 6vw;
   line-height: 100%;
   font-weight: 400;
+  padding-bottom: 3%;
   font-family: "Gt super text book", Georgia, sans-serif;
 `;
-const Para = styled.p`
+export const Para = styled.p`
   font-weight: 600;
 `;
 const Bluediv2 = styled.div`
@@ -51,7 +54,6 @@ const Bluediv2 = styled.div`
   background-color: #4479ff;
   color: #fff;
   border-bottom: 1px solid #fff;
-  height: 60vh;
   height: 60vh;
   display: flex;
 `;
@@ -72,14 +74,18 @@ const Cyan = styled(Bluediv)`
   background-color: #bcdfff;
   color: #000;
   flex-direction: column;
-  height: 70vh;
+  height: 72vh;
   border: 1.5px solid black;
 `;
 export const HeroBlue = ({ heading, description1, description2 }) => {
   return (
     <>
       <Bluediv>
-        <div>
+        <div
+          style={{
+            textAlign: "center",
+          }}
+        >
           <HeadingCustom>{heading}</HeadingCustom>
           <Para>{description1}</Para>
           <Para>{description2}</Para>
@@ -109,6 +115,7 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
                   lineHeight: "100%",
                   letterSpacing: "-0.56px",
                   textAlign: "left",
+                  paddingBottom: "3%",
                 }}
               >
                 {" "}
@@ -117,6 +124,9 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
               <img
                 src="https://cdn-static-1.medium.com/sites/medium.com/membership/images/UnlimitedReading.svg"
                 alt=""
+                style={{
+                  marginBottom: "3%",
+                }}
               />
               <Para2>
                 Read any article in our entire library across all your devices —
@@ -146,6 +156,7 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
                   lineHeight: "100%",
                   letterSpacing: "-0.56px",
                   textAlign: "left",
+                  paddingBottom: "3%",
                 }}
               >
                 Support the voices you want to hear <br></br>more from.
@@ -153,6 +164,9 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
               <img
                 src="https://cdn-static-1.medium.com/sites/medium.com/membership/images/SupportWriters.svg"
                 alt=""
+                style={{
+                  marginBottom: "3%",
+                }}
               />
               <Para2>
                 Read any article in our entire library across all your devices —
@@ -162,8 +176,13 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
           </Box>
         </div>
       </Bluediv2>
+
       <Cyan>
-        <div>
+        <div
+          style={{
+            textAlign: "center",
+          }}
+        >
           <HeadingCustom>
             Take your mind
             <br />
@@ -176,6 +195,7 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
           alt=""
         />
       </Cyan>
+      <Footer />
     </>
   );
 };

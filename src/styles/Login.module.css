@@ -1,0 +1,108 @@
+.login2 {
+  min-width: 400px;
+  justify-items: center;
+  text-align: center;
+  /* justify-content: center; */
+  position: relative;
+  min-height: 700px;
+
+  margin: auto;
+  margin-top: 20px;
+  max-width: 45%;
+  max-height: 95%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+}
+.login1 {
+  /* justify-content: center; */
+  /* justify-items: center; */
+  /* padding: 10px auto 10px auto; */
+  margin-left: auto;
+}
+.login3 {
+  margin-top: 55px;
+}
+.login3 > h2 {
+  color: rgb(8, 8, 8);
+  letter-spacing: -0.03em;
+  font-feature-settings: "pnum", "lnum";
+  line-height: 32px;
+  font-size: 28px;
+  font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-weight: 400;
+}
+.login4 {
+  margin-top: 50px;
+  box-sizing: inherit;
+  text-align: center;
+}
+.login41 {
+  margin: auto;
+  margin-bottom: 15px;
+  padding: 6px 12px 8px 16px;
+  max-height: 40px;
+  text-decoration: none;
+  border-style: solid;
+  box-sizing: border-box;
+  width: 212px;
+  border-width: 1px;
+  border-radius: 99em;
+  border-color: rgb(168, 168, 168);
+  text-align: left;
+  line-height: 20px;
+  font-size: 14px;
+  color: rgb(41, 41, 41);
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  align-items: center;
+  display: flex;
+  font-weight: 400;
+  cursor: pointer;
+}
+.login42 {
+  margin: auto;
+  margin-top: 40px;
+
+  padding: 6px 10px 0px 45px;
+  max-height: 20px;
+  text-decoration: none;
+
+  box-sizing: border-box;
+  width: 220px;
+
+  border-color: rgb(168, 168, 168);
+  text-align: left;
+  line-height: 20px;
+  font-size: 14px;
+  color: rgb(41, 41, 41);
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  align-items: center;
+  display: flex;
+  font-weight: 400;
+}
+.login42 > button {
+  background: transparent;
+  border: none;
+  fill: rgb(26, 137, 23);
+  color: rgb(26, 137, 23);
+  cursor: pointer;
+}
+.login5 {
+  width: 450px;
+  display: block;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 35px;
+}
+.login5 > p {
+  color: rgb(117, 117, 117);
+  font-size: 13px;
+  line-height: 20px;
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.login5 a {
+  color: rgb(117, 117, 117);
+}

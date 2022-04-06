@@ -1,0 +1,144 @@
+.sp1 {
+  padding-top: 20px;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  /* padding: 2% 15% 0% 15%; */
+}
+.sp2 {
+  margin-bottom: 7vh;
+}
+.sp3 {
+  max-width: 60vw;
+  min-height: 70vh;
+  /* background-color: black; */
+  margin: auto;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 18px 0px;
+  background-image: url(./Image/login.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.sp4 {
+  text-align: center;
+}
+.sp4 > h2 {
+  font-family: medium-marketing-display-font, Georgia, Cambria,
+    "Times New Roman", Times, serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 32px !important;
+  line-height: 36px !important;
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+  color: rgb(0 0 0 / 84%) !important;
+  fill: rgb(0 0 0 / 84%) !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 20px !important;
+}
+.sp5 {
+  text-align: center !important;
+  justify-items: center;
+  margin: 0 auto 25px auto;
+}
+.sp5 > p {
+  --x-height-multiplier: 0.342 !important;
+  --baseline-multiplier: 0.22 !important;
+  font-family: medium-content-sans-serif-font, "Lucida Grande",
+    "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  letter-spacing: 0 !important;
+  font-size: 19px !important;
+  line-height: 24px !important;
+  -webkit-transform: translateY(-1.32px);
+  transform: translateY(-1.32px);
+  color: rgb(0 0 0 / 76%) !important;
+  max-width: 360px !important;
+  fill: rgb(0 0 0 / 76%) !important;
+  width: 100% !important;
+  font-size: 16px !important;
+}
+.sp6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sp61 {
+  margin: auto;
+  margin-bottom: 15px;
+  padding: 6px 12px 8px 16px;
+  max-height: 38px;
+  text-decoration: none;
+  border-style: solid;
+  box-sizing: border-box;
+  width: 312px;
+  border-width: 1px;
+  border-radius: 99em;
+  border-color: rgb(168, 168, 168);
+  text-align: left;
+  line-height: 20px;
+  font-size: 14px;
+  color: rgb(41, 41, 41);
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  align-items: center;
+  display: flex;
+  font-weight: 400;
+  cursor: pointer;
+}
+.sp61 > p {
+  margin-left: 5px;
+}
+.sp7 {
+  width: 350px;
+  display: block;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 35px;
+}
+.sp7 > p {
+  color: rgb(0 0 0 / 76%) !important;
+  font-size: 13px;
+  line-height: 20px;
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+.sp7 a {
+  color: rgb(0 0 0 / 76%) !important;
+}
+
+.sp8 {
+  margin: auto;
+  margin-top: 0px;
+
+  padding: 6px 10px 0px 45px;
+  max-height: 20px;
+  text-decoration: none;
+
+  box-sizing: border-box;
+  width: 320px;
+
+  border-color: rgb(168, 168, 168);
+  text-align: left;
+  line-height: 20px;
+  font-size: 15px;
+  color: rgb(41, 41, 41);
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  align-items: center;
+  display: flex;
+  font-weight: 520 !important;
+}
+.sp8 > button {
+  background: transparent;
+  border: none;
+  fill: rgb(26, 137, 23);
+  color: rgb(26, 137, 23);
+  cursor: pointer;
+}

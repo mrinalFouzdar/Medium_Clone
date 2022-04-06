@@ -1,0 +1,21 @@
+.main-foot {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 5%;
+  padding-right: 5%;
+  height: 10vh;
+}
+.list-group {
+  display: flex;
+  list-style: none;
+}
+.list-item {
+  padding: 5px;
+  cursor: pointer;
+}
+.para-foot {
+  font-weight: bold;
+}
