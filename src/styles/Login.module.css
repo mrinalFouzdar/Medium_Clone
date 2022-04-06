@@ -85,7 +85,7 @@
 .login42 > button {
   background: transparent;
   border: none;
-  fill: rgb(26, 137, 23);
+  /* fill: rgb(26, 137, 23); */
   color: rgb(26, 137, 23);
   cursor: pointer;
 }
