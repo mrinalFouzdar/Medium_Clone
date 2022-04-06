@@ -37,9 +37,9 @@ export const Landingleft = () => {
 
   return (
     <div className={styles.ll1}>
-      {ldata.map((eblog) =>
+      {ldata.map((eblog, idx) =>
         eblog.image == null ? null : (
-          <div className={styles.ll2}>
+          <div key={idx} className={styles.ll2}>
             <div className={styles.ll3}>
               <div className={styles.ll4}>
                 <div className={styles.ll41}>
@@ -99,8 +99,8 @@ export const Landingleft = () => {
           </div>
         )
       )}
-      {adata.map((eblog) => (
-        <div className={styles.ll2}>
+      {adata.map((eblog, idx) => (
+        <div key={idx} className={styles.ll2}>
           <div className={styles.ll3}>
             <div className={styles.ll4}>
               <div className={styles.ll41}>

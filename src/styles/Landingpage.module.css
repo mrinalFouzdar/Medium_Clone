@@ -1,6 +1,6 @@
 .lu1 {
   width: 100%;
-  margin-top: 44px;
+  margin-top: 0px;
   box-sizing: border-box;
   justify-content: center !important;
   background-color: rgb(196, 226, 255);
@@ -23,7 +23,7 @@
 }
 .lu3 {
   min-width: 550px;
-  /* padding-top: 93px; */
+  padding-top: 93px;
   height: 100%;
   padding-bottom: 92px;
   font-weight: 400;
@@ -86,7 +86,7 @@
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
   /* border: 10px solid black; */
-  padding: 10px 6vw;
+  padding: 40px 6vw;
   border-bottom: 1px solid gray;
 }
 
@@ -153,7 +153,7 @@
   margin: 0;
 }
 .t9 {
-  margin-bottom: 8px;
+  margin-bottom: 15px;
   display: flex;
 
   box-sizing: inherit;
