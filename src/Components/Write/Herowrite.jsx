@@ -25,7 +25,10 @@ const Orangediv = styled(Bluediv)`
   padding-left: 5%;
   border: 1px solid black;
 `;
+
 export const Herowrite = () => {
+  console.log("hallo");
+
   return (
     <div className="main-write-box">
       <div className="left-box">
@@ -46,7 +49,13 @@ export const Herowrite = () => {
           <AccessButton>Start Writing</AccessButton>
         </Orangediv>
       </div>
-      <div className="right-box">hello</div>
+      <div className="right-box">
+        <img
+          // src="https://cdn.pixabay.com/photo/2016/10/29/23/44/decorative-1782008__340.png"
+          src="https://cdn.pixabay.com/photo/2016/10/29/20/41/abstract-1781486__340.png"
+          alt=""
+        />
+      </div>
     </div>
   );
 };

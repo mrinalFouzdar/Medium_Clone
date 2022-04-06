@@ -5,5 +5,24 @@
   display: flex;
 }
 .right-box {
+  padding-top: 5%;
+  align-items: center;
   width: 30%;
+  background: #f24d2e;
+
+  position: relative;
+  padding-right: 2.5%;
+}
+.right-box > img {
+  width: 100%;
+  -webkit-animation: rotation 2ms linear infinite;
+  animation: rotation 8s linear infinite !important;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(-1deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
