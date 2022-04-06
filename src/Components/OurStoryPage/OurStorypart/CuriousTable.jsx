@@ -21,7 +21,7 @@ margin-top: 0% ;
       padding-top: 70px;
     } */
     h2{
-
+      text-align:center ;
       margin-top: 0px;
       margin-bottom: 0px;
       padding-right: 0px;

@@ -34,7 +34,8 @@ background:black ;
             letter-spacing: -0.4vw;
             .ptag1 {
                 /* width: 90%; */
-                padding-right:180px;
+                padding-right:100px;
+                padding-left:50px;
     
             margin: 30px auto;
           }

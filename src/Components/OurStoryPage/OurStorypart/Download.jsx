@@ -35,7 +35,7 @@ const MainDiv=styled.div`
     line-height: 100%;
     font-weight: 400;
     letter-spacing: -0.35vw;
-    margin-left:-40px;
+    /* margin-left:-40px; */
 }
 
 .bot-col-item.under-header {
@@ -71,7 +71,7 @@ const MainDiv=styled.div`
 }
 
 .app-icon {
-    margin-left: -300px;
+    /* margin-left: -300px; */
 }
 .app-icon1{
     margin-right:30px;
