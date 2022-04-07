@@ -1,0 +1,28 @@
+.ap1 {
+  width: 800px;
+  justify-items: center;
+  /* margin: auto; */
+  padding-left: 80px;
+  padding-right: 80px;
+}
+.ap2 {
+  display: flex;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  flex-direction: row;
+}
+.ap3 {
+  margin-right: 20px;
+  width: 45px;
+}
+.ap3 > img {
+  width: 100%;
+  border-radius: 50%;
+}
+.ap4 > h4 {
+  font-weight: 500 !important;
+}
+.ap5 {
+  display: flex;
+  margin-left: auto;
+}

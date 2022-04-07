@@ -9,12 +9,13 @@ import { Write } from "./Components/Write/Write";
 import WriteBlog from "./Components/BlogWrite/WriteBlog";
 import { Signup } from "./Components/Loginpage/Signup";
 import { Loading } from "./Components/Loginpage/Loading";
+import { Lastblog } from "./Components/Afterpublish/Lastblog";
 
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <Routes>
+      {/* <Navbar /> */}
+      {/* <Routes>
         <Route path="/" element={<Landingpage />} />
         <Route path="/ourStory" element={<OurStorymain />} />
         <Route path="/memberShip" element={<Membership />} />
@@ -23,8 +24,8 @@ const App = () => {
         <Route path="/startIn" element={<Login />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/loading" element={<Loading />} />
-      </Routes>
-
+      </Routes> */}
+      <Lastblog />
       {/* <Navbar2 />
       <SideBar></SideBar> */}
       {/* <WriteBlog /> */}
