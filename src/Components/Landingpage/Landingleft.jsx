@@ -4,32 +4,37 @@ import ti1 from "../../styles/Image/t1.jpeg";
 export const Landingleft = () => {
   const [ldata, setLdata] = React.useState([]);
   const [adata, setAdata] = React.useState([]);
-  let api1 = "eab0fd7b29ce4560a915d616621a2335";
-  React.useEffect(() => {
-    fetch(
-      `http://api.mediastack.com/v1/news?access_key=b3c4fdcbc5ebc5a8acb86fa26a211a2b&limit=100&languages=en`
-    )
-      .then((res) => res.json())
-      .then((res) => setLdata(res.data))
-      .catch((err) => console.log(err));
-    fetch(
-      `https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=${api1}`
-    )
-      .then((res) => res.json())
-      .then((res) => setAdata(res.articles));
-    // console.log(adata);
-    fetch(` https://newsapi.org/v2/everything?q=bitcoin&apiKey=${api1}`)
-      .then((res) => res.json())
-      .then((res) => setAdata([...adata, ...res.articles]));
+  // let api1 = "eab0fd7b29ce4560a915d616621a2335";
+  let api1 = "5a917577b74147bbbf783b3f25e3807b";
 
-    fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${api1}`)
-      .then((res) => res.json())
-      .then((res) => setAdata([...adata, ...res.articles]));
-    fetch(
-      `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${api1}`
-    )
-      .then((res) => res.json())
-      .then((res) => setAdata([...adata, ...res.articles]));
+  React.useEffect(() => {
+    if (ldata.length !== 0 || adata.length !== 0) {
+      fetch(
+        `http://api.mediastack.com/v1/news?access_key=b3c4fdcbc5ebc5a8acb86fa26a211a2b&limit=100&languages=en`
+      )
+        .then((res) => res.json())
+        .then((res) => setLdata(res.data))
+        .catch((err) => console.log(err));
+      fetch(
+        `https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=${api1}`
+      )
+        .then((res) => res.json())
+        .then((res) => setAdata(res.articles));
+      // console.log(adata);
+      fetch(` https://newsapi.org/v2/everything?q=bitcoin&apiKey=${api1}`)
+        .then((res) => res.json())
+        .then((res) => setAdata([...adata, ...res.articles]));
+
+      fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${api1}`)
+        .then((res) => res.json())
+        .then((res) => setAdata([...adata, ...res.articles]));
+      fetch(
+        `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${api1}`
+      )
+        .then((res) => res.json())
+        .then((res) => setAdata([...adata, ...res.articles]));
+      console.log("hallo");
+    }
   }, []);
 
   return (

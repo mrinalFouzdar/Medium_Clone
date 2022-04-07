@@ -1,9 +1,32 @@
 .left-box {
-  width: 70%;
+  width: 60%;
 }
 .main-write-box {
   display: flex;
+  box-sizing: border-box;
+  width: 100%;
 }
 .right-box {
-  width: 30%;
+  padding-top: 5%;
+  align-items: center;
+  box-sizing: border-box;
+  width: 40%;
+  background: #f24d2e;
+
+  position: static;
+  padding-right: 20px;
+}
+.right-box > img {
+  /* margin-left: 50px; */
+  width: 85%;
+  -webkit-animation: rotation 2ms linear infinite;
+  animation: rotation 8s linear infinite !important;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(-1deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }

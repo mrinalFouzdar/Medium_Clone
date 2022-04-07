@@ -6,8 +6,8 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border-right: 1px solid #dcdcdc;
   position: fixed;
+  border-right: 1px solid #dcdcdc;
 }
 .list-icons {
   list-style: none;

@@ -9,6 +9,7 @@ import { Write } from "./Components/Write/Write";
 import WriteBlog from "./Components/BlogWrite/WriteBlog";
 import { Signup } from "./Components/Loginpage/Signup";
 import AfterLogincomp from "./LoginComp/AfterLogincomp";
+import { Loading } from "./Components/Loginpage/Loading";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/logIn" element={<Login />} />
         <Route path="/startIn" element={<Login />} />
         <Route path="/register" element={<Signup />} />
+        <Route path="/loading" element={<Loading />} />
         <Route path="/AfterLogincomp" element={<AfterLogincomp />} />
       </Routes>
 
