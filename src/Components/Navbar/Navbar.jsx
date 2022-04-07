@@ -115,6 +115,8 @@ export default function Navbar() {
       dispatch(setDisplay(false));
     } else if (location.pathname === "/register") {
       dispatch(setDisplay(false));
+    } else if (location.pathname === "/loading") {
+      dispatch(setDisplay(false));
     } else {
       setNavBg("white");
       dispatch(setDisplay(true));

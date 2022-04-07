@@ -13,39 +13,36 @@ export const Login = () => {
   if (loadData("useDetails") === null) {
     saveData("userDetails", []);
   }
+  // let isAuth=useSelect
 
   const navigate = useNavigate();
-  // const [showlogin, setShowLogin] = React.useState(true);
-  // const [showLogout, setShowLogout] = React.useState(false);
-  const AuthDetails = useSelector((state) => state.IsAuth);
-  // console.log(AuthDetails);
+
+  let AuthDetails = useSelector((state) => state.IsAuth);
+  console.log(AuthDetails);
   const dispatch = useDispatch();
   const onLoginsucces = (res) => {
     let user = loadData("user");
-    // console.log("Login succes", res.profileObj.email);
-    // let edata = res.profileObj.email;
-    // let user = loadData("user");
-    // user.push(edata);
-    // total_user = ...totaluser ,edata);
-    // saveData("user", user);
-    // setShowLogin(false);
-    // console.log(showlogin);
+
     let userDetails = loadData("userDetails");
-    userDetails.push(res.profileObj);
-    saveData("userDetails", userDetails);
-    // setShowLogout(true);
-    console.log(userDetails);
+
+    let i = 1;
     user.map((eachuser) =>
       eachuser === res.profileObj.email
-        ? (navigate("/"), dispatch(isAuthorized(true)), alert("succesful"))
-        : alert("Register")
+        ? (navigate("/loading"),
+          dispatch(isAuthorized(true)),
+          i === 1 ? alert("successfull") : console.log("something"),
+          i++,
+          userDetails.push(res.profileObj),
+          saveData("userDetails", userDetails))
+        : console.log("hallo")
     );
-    // console.log(AuthDetails);
+
+    if (i === 1) {
+      alert("Register First");
+    }
   };
   const onFailuresucces = (res) => {
     console.log("login Failed", res);
-    // setShowLogin(true);
-    // setShowLogout(false);
   };
   const logsin = () => {
     navigate("/register");
