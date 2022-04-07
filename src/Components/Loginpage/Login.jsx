@@ -34,10 +34,13 @@ export const Login = () => {
     userDetails.push(res.profileObj);
     saveData("userDetails", userDetails);
     // setShowLogout(true);
-    console.log(userDetails);
+    // Saving data in local storage
+
     user.map((eachuser) =>
       eachuser === res.profileObj.email
-        ? (navigate("/"), dispatch(isAuthorized(true)), alert("succesful"))
+        ? (navigate("/AfterLogincomp"),
+          dispatch(isAuthorized(true)),
+          alert("succesful"))
         : alert("Register")
     );
     // console.log(AuthDetails);
@@ -53,7 +56,7 @@ export const Login = () => {
   const closesign = () => {
     navigate("/");
   };
-  console.log(AuthDetails);
+  console.log(AuthDetails, "authdetails");
   return (
     <div className={styles.login1}>
       <div className={styles.login2}>

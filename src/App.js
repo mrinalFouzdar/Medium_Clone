@@ -8,28 +8,26 @@ import Membership from "./Components/Membership/Membership";
 import { Write } from "./Components/Write/Write";
 import WriteBlog from "./Components/BlogWrite/WriteBlog";
 import { Signup } from "./Components/Loginpage/Signup";
+import AfterLogincomp from "./LoginComp/AfterLogincomp";
 
 const App = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-      }}
-    >
-      {/* <Navbar /> */}
+    <div>
+      <Navbar />
       <Routes>
         {/* <Route path="/" element={<Landingpage />} /> */}
-        {/* <Route path="/ourStory" element={<OurStorymain />} />
+        {/* {/* <Route path="/ourStory" element={<OurStorymain />} /> */}
         <Route path="/memberShip" element={<Membership />} />
         <Route path="/write" element={<Write />} />
         <Route path="/logIn" element={<Login />} />
         <Route path="/startIn" element={<Login />} />
         <Route path="/register" element={<Signup />} />
+        <Route path="/AfterLogincomp" element={<AfterLogincomp />} />
       </Routes>
-      <Navbar2 />
-      <SideBar></SideBar>
+
       {/* <WriteBlog/> */}
+      {/* <Navbar2 />
+      <SideBar></SideBar> */}
     </div>
   );
 };
