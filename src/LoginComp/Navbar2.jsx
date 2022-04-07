@@ -1,9 +1,15 @@
 import React from "react";
 import "./Navbar.Module.css";
+import { Link } from "react-router-dom";
 import { ImHome } from "react-icons/im";
 import { VscBell } from "react-icons/vsc";
 import { BsBookmarks, BsPencilSquare } from "react-icons/bs";
 import { CgNotes } from "react-icons/cg";
+// import styled from "styled-components";
+
+// const Nav2Link=styled(Link)`
+
+// `
 import { loadData, saveData } from "../Localstorage.js";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
