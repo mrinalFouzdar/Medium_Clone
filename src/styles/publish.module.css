@@ -1,14 +1,16 @@
 .ap1 {
-  width: 800px;
+  margin: auto;
+  width: 900px;
   justify-items: center;
   /* margin: auto; */
   padding-left: 80px;
   padding-right: 80px;
+  box-sizing: border-box;
 }
 .ap2 {
   display: flex;
   margin-top: 80px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   flex-direction: row;
 }
 .ap3 {
@@ -25,4 +27,111 @@
 .ap5 {
   display: flex;
   margin-left: auto;
+}
+.ap51 {
+  margin-left: 18px;
+}
+.ap52 {
+  margin-left: 35px;
+}
+.ap51 :hover {
+  fill: black;
+  cursor: pointer;
+  color: black;
+}
+.ap6 {
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.ap61 > h1 {
+  color: black;
+  margin-bottom: 25px;
+}
+.ap62 > p {
+  color: black;
+  font-weight: 400;
+  font-size: 18px;
+}
+.ap7 {
+  display: flex;
+  margin-top: 60px;
+}
+.ap71 {
+  display: flex;
+}
+.ap72 {
+  display: flex;
+  margin-left: auto;
+}
+.ap711 {
+  margin-right: 30px;
+  fill: gray;
+  color: gray;
+}
+.ap722 {
+  margin-left: 30px;
+  fill: gray;
+  color: gray;
+}
+.ap9 {
+  display: flex;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.ap91 {
+  padding-left: auto;
+}
+.ap911 {
+  margin-left: 30px;
+  /* margin-left: auto; */
+  display: flex;
+  margin-bottom: 15px;
+}
+.ap9111 {
+  display: flex;
+  margin-left: auto;
+}
+.ap9h {
+  margin-bottom: 15px;
+  color: rgb(0 0 0 / 80%);
+}
+.ap9p {
+  font-weight: 400;
+  olor: rgb(117 117 117);
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.ap9 > p {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: rgb(117 117 117);
+}
+.hr {
+  color: rgb(117 117 117);
+}
+.hr1 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 5vw;
+  align-items: center;
+}
+.hr2 {
+  color: black;
+  font-size: 15px;
+  margin-right: 30px;
+}
+.hr3 {
+  background-color: black;
+  padding: 10px 15px 10px 15px;
+  border-radius: 40px;
+  box-sizing: border-box;
+  color: white;
+  font-weight: 500;
 }

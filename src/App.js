@@ -13,13 +13,12 @@ import { Loading } from "./Components/Loginpage/Loading";
 import { Lastblog } from "./Components/Afterpublish/Lastblog";
 
 const App = () => {
-
   return (
     <div>
       <Navbar />
       <Routes>
-        {/* <Route path="/" element={<Landingpage />} /> */}
-        {/* {/* <Route path="/ourStory" element={<OurStorymain />} /> */}
+        {/* <Route path="/" element={<Landingpage />} />
+        <Route path="/ourStory" element={<OurStorymain />} /> */}
         <Route path="/memberShip" element={<Membership />} />
         <Route path="/write" element={<Write />} />
         <Route path="/logIn" element={<Login />} />
@@ -28,7 +27,7 @@ const App = () => {
         <Route path="/loading" element={<Loading />} />
         <Route path="/AfterLogincomp" element={<AfterLogincomp />} />
       </Routes>
-
+      <Lastblog />
       {/* <WriteBlog/> */}
       {/* <Navbar2 />
       <SideBar></SideBar> */}
