@@ -4,7 +4,7 @@
   box-shadow: 2px 2px 2px 1px whitesmoke;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   position: fixed;
   border-right: 1px solid #dcdcdc;
@@ -23,4 +23,20 @@
 }
 .first-box {
   margin-top: 20%;
+}
+.last-box {
+  position: relative;
+}
+.drop-list {
+  list-style: none;
+}
+.drop-list > li {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  font-size: 14px;
+  cursor: pointer;
+}
+.drop-list > li:hover {
+  color: rgba(26, 137, 23, 1);
 }

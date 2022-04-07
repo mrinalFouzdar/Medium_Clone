@@ -1,13 +1,14 @@
 import React from "react";
 import styles from "../../styles/Loading.module.css";
 import { useNavigate } from "react-router-dom";
+import AfterLogincomp from "../../LoginComp/AfterLogincomp";
 export const Loading = () => {
   const navigate = useNavigate();
 
   React.useEffect(() => {
     const timer = setTimeout(() => {
       console.log("This will run after 1 second!");
-      navigate("/");
+      navigate("/AfterLogincomp");
     }, 7000);
     return () => clearTimeout(timer);
   }, []);

@@ -50,7 +50,7 @@ export const Login = () => {
   const closesign = () => {
     navigate("/");
   };
-  console.log(AuthDetails);
+  console.log(AuthDetails, "authdetails");
   return (
     <div className={styles.login1}>
       <div className={styles.login2}>

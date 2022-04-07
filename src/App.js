@@ -8,6 +8,7 @@ import Membership from "./Components/Membership/Membership";
 import { Write } from "./Components/Write/Write";
 import WriteBlog from "./Components/BlogWrite/WriteBlog";
 import { Signup } from "./Components/Loginpage/Signup";
+import AfterLogincomp from "./LoginComp/AfterLogincomp";
 import { Loading } from "./Components/Loginpage/Loading";
 
 const App = () => {
@@ -16,19 +17,20 @@ const App = () => {
     <div>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Landingpage />} />
-        <Route path="/ourStory" element={<OurStorymain />} />
+        {/* <Route path="/" element={<Landingpage />} /> */}
+        {/* {/* <Route path="/ourStory" element={<OurStorymain />} /> */}
         <Route path="/memberShip" element={<Membership />} />
         <Route path="/write" element={<Write />} />
         <Route path="/logIn" element={<Login />} />
         <Route path="/startIn" element={<Login />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/loading" element={<Loading />} />
+        <Route path="/AfterLogincomp" element={<AfterLogincomp />} />
       </Routes>
 
+      {/* <WriteBlog/> */}
       {/* <Navbar2 />
       <SideBar></SideBar> */}
-      {/* <WriteBlog /> */}
     </div>
   );
 };

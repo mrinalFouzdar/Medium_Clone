@@ -5,12 +5,43 @@ import { ImHome } from "react-icons/im";
 import { VscBell } from "react-icons/vsc";
 import { BsBookmarks, BsPencilSquare } from "react-icons/bs";
 import { CgNotes } from "react-icons/cg";
+// import styled from "styled-components";
+
+// const Nav2Link=styled(Link)`
+
+// `
+import { loadData, saveData } from "../Localstorage.js";
 import styled from "styled-components";
-
-const Nav2Link=styled(Link)`
-
-`
+import { useNavigate } from "react-router-dom";
+const Dropupdiv = styled.div`
+  width: 300px;
+  height: 80vh;
+  background-color: white;
+  box-shadow: 5px 5px 5px 5px whitesmoke;
+  position: absolute;
+  font-size: 14px;
+  bottom: 45px;
+  left: 3px;
+  display: ${(props) => props.display};
+`;
 const Navbar2 = () => {
+  const navigate = useNavigate();
+  const curuser = loadData("userDetails");
+  const userimage = curuser[0].imageUrl;
+  const useremail = curuser[0].email;
+  const name = curuser[0].givenName + " " + curuser[0].familyName;
+  const [display, setdisplay] = React.useState("none");
+  const handleToggle = () => {
+    if (display == "none") {
+      setdisplay("block");
+    } else {
+      setdisplay("none");
+    }
+  };
+  const handleLogout = () => {
+    saveData("userDetails", []);
+    navigate("/");
+  };
   return (
     <div>
       <div className="navbar">
@@ -25,16 +56,16 @@ const Navbar2 = () => {
         <div
           className="mid-box"
           style={{
-            marginBottom: "200%",
+            marginBottom: "100%",
           }}
         >
           <ul className="list-icons">
             <li className="l-i">
-              <Nav2Link to="/">
+              <a>
                 <div>
                   <ImHome className="icons" />
                 </div>
-              </Nav2Link>
+              </a>
             </li>
             <li className="l-i">
               <a>
@@ -47,9 +78,9 @@ const Navbar2 = () => {
               </a>
             </li>
             <li className="l-i">
-              <Nav2Link to="/YourStory">
+              <a>
                 <CgNotes className="icons" />
-              </Nav2Link>
+              </a>
             </li>
             <div
               style={{
@@ -67,7 +98,76 @@ const Navbar2 = () => {
             </li>
           </ul>
         </div>
-        <div className="last-box"></div>
+        <div className="last-box">
+          <Dropupdiv display={display}>
+            <ul className="drop-list">
+              <li>
+                <a>Medium Partner program</a>
+              </li>
+              <li>
+                <a>Gift a membership</a>
+              </li>
+              <li>
+                <a>Become a member</a>
+              </li>
+              <hr />
+              <li onClick={handleLogout}>
+                <a>Sign out</a>
+              </li>
+              <li>
+                <a>Refine recommendations</a>
+              </li>
+              <li>
+                <a>Manage publications</a>
+              </li>
+              <li>
+                <a>Stats</a>
+              </li>
+              <li>
+                <a>Settings</a>
+              </li>
+            </ul>
+            <hr />
+            <div
+              style={{
+                display: "flex",
+                paddingLeft: "5%",
+                paddingTop: "10%",
+              }}
+            >
+              <img
+                src={userimage}
+                alt=""
+                style={{
+                  width: "30px",
+                  borderRadius: "50%",
+                  cursor: "pointer",
+                }}
+              />
+              <div
+                style={{
+                  paddingLeft: "5%",
+                }}
+              >
+                <p>{name}</p>
+                <p
+                  style={{
+                    fontSize: "12px",
+                    color: "rgba(117, 117, 117, 1)",
+                  }}
+                >
+                  @{useremail.slice(0, 17)}
+                </p>
+              </div>
+            </div>
+          </Dropupdiv>
+          <img
+            src={userimage}
+            alt=""
+            style={{ width: "30px", borderRadius: "50%", cursor: "pointer" }}
+            onClick={handleToggle}
+          />
+        </div>
       </div>
     </div>
   );
