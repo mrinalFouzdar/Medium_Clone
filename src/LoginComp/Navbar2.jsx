@@ -1,10 +1,15 @@
 import React from "react";
 import "./Navbar.Module.css";
+import { Link } from "react-router-dom";
 import { ImHome } from "react-icons/im";
 import { VscBell } from "react-icons/vsc";
 import { BsBookmarks, BsPencilSquare } from "react-icons/bs";
 import { CgNotes } from "react-icons/cg";
+import styled from "styled-components";
 
+const Nav2Link=styled(Link)`
+
+`
 const Navbar2 = () => {
   return (
     <div>
@@ -25,11 +30,11 @@ const Navbar2 = () => {
         >
           <ul className="list-icons">
             <li className="l-i">
-              <a>
+              <Nav2Link to="/">
                 <div>
                   <ImHome className="icons" />
                 </div>
-              </a>
+              </Nav2Link>
             </li>
             <li className="l-i">
               <a>
@@ -42,9 +47,9 @@ const Navbar2 = () => {
               </a>
             </li>
             <li className="l-i">
-              <a>
+              <Nav2Link to="/YourStory">
                 <CgNotes className="icons" />
-              </a>
+              </Nav2Link>
             </li>
             <div
               style={{

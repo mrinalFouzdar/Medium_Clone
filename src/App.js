@@ -8,11 +8,19 @@ import Membership from "./Components/Membership/Membership";
 import { Write } from "./Components/Write/Write";
 import WriteBlog from "./Components/BlogWrite/WriteBlog";
 import { Signup } from "./Components/Loginpage/Signup";
-
+import YourStory from "./AfterLogIn/BlogWrite/YourStory";
+import Navbar2 from "./LoginComp/Navbar2"
+import SideBar from "./LoginComp/Sidebar";
+import { useSelector } from "react-redux";
 const App = () => {
+    const AuthDetails = useSelector((state) => state.IsAuth);
+
   return (
-    <div >
-      {/* <Navbar />
+    <>
+
+  
+    <div>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Landingpage />} />
       
@@ -22,12 +30,13 @@ const App = () => {
         <Route path="/logIn" element={<Login />} />
         <Route path="/startIn" element={<Login />} />
         <Route path="/register" element={<Signup />} />
-      </Routes>  */}
-      {/* <Navbar2 />
-      <SideBar></SideBar> */}
-      <WriteBlog/>
-  
-    </div>
+        <Route path="/YourStory" element={<YourStory/>}/>
+      </Routes> 
+     </div>:
+
+    
+    
+    </>
   );
 };
 

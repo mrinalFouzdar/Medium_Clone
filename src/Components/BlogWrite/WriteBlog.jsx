@@ -80,7 +80,7 @@ export default function WriteBlog() {
     // update Redux
 
     const uptdateRedux=()=>{
-        fetch(`http://localhost:3001/blog`)
+        fetch(`https://skbhardwaj.herokuapp.com/Blogs`)
         .then((res)=>res.json())
         .then((res)=>{
             // console.log(res)
@@ -91,7 +91,7 @@ export default function WriteBlog() {
 
    const handleSubmit=(e)=>{
        e.preventDefault()
-       fetch(`http://localhost:3001/blog`,{
+       fetch(`https://skbhardwaj.herokuapp.com/Blogs`,{
            method:"POST",
            body:JSON.stringify(blog),
            headers:{
