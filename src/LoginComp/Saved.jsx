@@ -11,17 +11,35 @@ const Div = styled.div`
     border: 1px solid rgba(230, 230, 230, 1);
     justify-content: space-between;
     cursor: pointer;
+    border-radius: 4px;
     
    }
 
    .readList{
      padding:20px ;
+     display:flex ;
+     flex-direction:column ;
+     justify-content:space-between ;
    
    }
    .viewList{
 
      display:flex ;
+     align-items:center ;
    }
+   .view{
+     font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+     box-sizing:border-box ;
+     border:1px solid ;
+     padding: 4px 12px 6px;
+     border-color: rgba(117, 117, 117, 1);
+     border-radius: 99em;
+     color: rgba(41, 41, 41, 1);
+     margin-right:12px ;
+
+
+   }
+
 `
 
 
@@ -34,7 +52,7 @@ const Saved = () => {
           <h2>Reading list</h2>
         </div>
         <div className="viewList">
-          <div>
+          <div className="view">
             <p>View list</p>
           </div>
           <div>
