@@ -24,12 +24,11 @@ export const Login = () => {
     let user = loadData("user");
 
     let userDetails = loadData("userDetails");
-
+    // (navigate("/loading"),
     let i = 1;
     user.map((eachuser) =>
       eachuser === res.profileObj.email
-        ? (navigate("/loading"),
-          dispatch(isAuthorized(true)),
+        ? (dispatch(isAuthorized(true)),
           i === 1 ? alert("successfull") : console.log("something"),
           i++,
           userDetails.push(res.profileObj),

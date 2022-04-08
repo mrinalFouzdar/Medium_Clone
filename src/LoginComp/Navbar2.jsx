@@ -1,5 +1,6 @@
 import React from "react";
 import "./Navbar.Module.css";
+
 import { Link } from "react-router-dom";
 import { ImHome } from "react-icons/im";
 import { VscBell } from "react-icons/vsc";
@@ -61,26 +62,30 @@ const Navbar2 = () => {
         >
           <ul className="list-icons">
             <li className="l-i">
-              <a>
-                <div>
+              {/* <a> */}
+              <div>
+                <Link to="/home">
                   <ImHome className="icons" />
-                </div>
-              </a>
+                </Link>
+              </div>
+              {/* </a> */}
             </li>
             <li className="l-i">
-              <a>
+              {/* <a> */}
+              <Link to="/allpublished">
                 <VscBell className="icons" />
-              </a>
+              </Link>
+              {/* </a> */}
             </li>
             <li className="l-i">
-              <a>
-                <BsBookmarks className="icons" />
-              </a>
+              {/* <a> */}
+              <BsBookmarks className="icons" />
+              {/* </a> */}
             </li>
             <li className="l-i">
-              <a>
-                <CgNotes className="icons" />
-              </a>
+              {/* <a> */}
+              <CgNotes className="icons" />
+              {/* </a> */}
             </li>
             <div
               style={{
@@ -92,9 +97,9 @@ const Navbar2 = () => {
               }}
             ></div>
             <li className="l-i">
-              <a>
-                <BsPencilSquare className="icons"></BsPencilSquare>
-              </a>
+              {/* <a> */}
+              <BsPencilSquare className="icons"></BsPencilSquare>
+              {/* /</li></a> */}
             </li>
           </ul>
         </div>

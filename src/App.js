@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { Landingpage } from "./Components/Landingpage/Landingpage";
 import Navbar from "./Components/Navbar/Navbar";
 import OurStorymain from "./Components/OurStoryPage/OurStorymain";
@@ -15,8 +15,17 @@ import { Leftafterpublish } from "./Components/Afterpublish/Leftafterpublish";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Landingright } from "./Components/Landingpage/Landingright";
 import { Landingleft } from "./Components/Landingpage/Landingleft";
+import ListOfStory from "./AfterLogIn/BlogWrite/ListOfStory";
+import { useSelector } from "react-redux";
+import Navbar2 from "./LoginComp/Navbar2";
 const App = () => {
-  return (
+  let AuthDetails = useSelector((state) => state.IsAuth);
+  let navigate = useNavigate();
+  console.log(AuthDetails.IsAuth);
+  if (AuthDetails.IsAuth === true) {
+    <Navigate to="/afterLogincomp" />;
+  }
+  return AuthDetails.IsAuth === false ? (
     <div>
       <Navbar />
       <Routes>
@@ -28,16 +37,55 @@ const App = () => {
         <Route path="/startIn" element={<Login />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/loading" element={<Loading />} />
-        <Route path="/AfterLogincomp" element={<AfterLogincomp />} />
-      </Routes>
+        <Route path="/afterLogincomp" element={<AfterLogincomp />} />
+        {/* <Route path="/home" element={<Lastblog />} /> */}
+        {/* <Route path="/allpublished" element={<ListOfStory />} /> */}
+      </Routes>{" "}
       {/* <Landingleft /> */}
       {/* <Landingpage /> */}
-      <Leftafterpublish />
-      {/* <WriteBlog/> */}
+      {/* <Leftafterpublish /> */}
+      {/* <WriteBlog /> */}
       {/* <Navbar2 />
-      <SideBar></SideBar> */}
+       <SideBar></SideBar> */}
     </div>
+  ) : (
+    <>
+      <Navbar2 />
+      <Routes>
+        <Route path="/home" element={<Lastblog />} />
+      </Routes>
+    </>
   );
 };
+
+// return
+// AuthDetails===false?
+//   (
+//     <div>
+//       <Navbar />
+//       <Routes>
+//         <Route path="/" element={<Landingpage />} />
+//         <Route path="/ourStory" element={<OurStorymain />} />
+//         <Route path="/memberShip" element={<Membership />} />
+//         <Route path="/write" element={<Write />} />
+//         <Route path="/logIn" element={<Login />} />
+//         <Route path="/startIn" element={<Login />} />
+//         <Route path="/register" element={<Signup />} />
+//         <Route path="/loading" element={<Loading />} />
+//         <Route path="/afterLogincomp" element={<AfterLogincomp />} />
+//         {/* <Route path="/home" element={<Lastblog />} /> */}
+//         {/* <Route path="/allpublished" element={<ListOfStory />} /> */}
+//       </Routes>
+//       {/* <Landingleft /> */}
+//       {/* <Landingpage /> */}
+//       {/* <Leftafterpublish /> */}
+//       {/* <WriteBlog/> */}
+//       {/* <Navbar2 />
+//       <SideBar></SideBar> */}
+//     </div>
+
+//   ):(
+
+// };
 
 export default App;
