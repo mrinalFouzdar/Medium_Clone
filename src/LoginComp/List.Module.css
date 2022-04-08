@@ -11,15 +11,15 @@
   list-style: none;
   display: flex;
 }
-.list-nav-group > li {
-  color: rgba(117, 117, 117, 1);
-  padding: 3%;
-  cursor: pointer;
-}
+
 .list-nav {
   width: 100%;
   border-bottom: 1px solid #dcdcdc;
 }
 .active {
   color: #222;
+}
+.list-nav-group > a {
+  padding: 3%;
+  cursor: pointer;
 }

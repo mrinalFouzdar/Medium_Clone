@@ -139,7 +139,7 @@ const Navbar2 = () => {
                 src={userimage}
                 alt=""
                 style={{
-                  width: "30px",
+                  width: "35px",
                   borderRadius: "50%",
                   cursor: "pointer",
                 }}

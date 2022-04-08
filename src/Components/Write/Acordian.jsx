@@ -3,12 +3,22 @@ import "./Acordian.Module.css";
 import { BsArrowDown, BsArrowUp } from "react-icons/bs";
 
 const Acordian = ({ title, active, setActive, ans }) => {
+  const handleClose = () => {
+    setActive("");
+    console.log("jii", active);
+  };
   return (
     <div className="acordian">
       <div className="acordianHeading">
-        <div className="container" onClick={() => setActive(title)}>
+        <div className="container">
           <p>{title}</p>
-          <span>{active === title ? <BsArrowUp /> : <BsArrowDown />}</span>
+          <span>
+            {active === title ? (
+              <BsArrowUp onClick={() => handleClose()} />
+            ) : (
+              <BsArrowDown onClick={() => setActive(title)} />
+            )}
+          </span>
         </div>
       </div>
       <div className={(active === title ? "show" : "") + "acordianContent"}>

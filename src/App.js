@@ -12,7 +12,6 @@ import AfterLogincomp from "./LoginComp/AfterLogincomp";
 import { Loading } from "./Components/Loginpage/Loading";
 
 const App = () => {
-
   return (
     <div>
       <Navbar />
