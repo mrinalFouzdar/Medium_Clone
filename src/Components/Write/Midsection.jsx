@@ -8,6 +8,7 @@ import {
   Para,
 } from "../Membership/Hero-blue";
 import styled from "styled-components";
+import { Navigate, useNavigate } from "react-router-dom";
 const Blackdiv = styled(Bluediv)`
   background: black;
   display: flex;
@@ -50,6 +51,11 @@ const Learnbtn = styled(AccessButton)`
 
 export const Midsection = () => {
   const [active, setActive] = React.useState("");
+  const nevigate = useNavigate()
+    const handleRedirectSingIn=()=>{
+      nevigate("/logIn")
+    }
+
   return (
     <div>
       <Blackdiv>
@@ -67,7 +73,7 @@ export const Midsection = () => {
               Tell your story your way — with different ways to <br />
               write, style, and brand your work.
             </Para>
-            <AccessButton>Start writing</AccessButton>
+            <AccessButton onClick={handleRedirectSingIn}>Start writing</AccessButton>
           </Pinkdiv>
         </div>
         <div className="right-pink-box">
