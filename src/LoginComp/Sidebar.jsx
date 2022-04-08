@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { MdOutlineBookmarkAdd } from "react-icons/md";
+import { BsSearch } from "react-icons/bs";
 
 const GetAccessbtn = styled.button`
   width: 70%;
@@ -16,7 +17,7 @@ const GetAccessbtn = styled.button`
 const Searchbar = styled.input.attrs({ type: "text", placeholder: "Search" })`
   background-color: transparent;
   margin-top: 10%;
-  padding: 8px 0 11px;
+  padding: 10px 30px 11px;
   width: 70%;
   border: 1px solid #dcdcdc;
   border-radius: 20px;
@@ -68,6 +69,13 @@ const SideBar = () => {
     >
       <GetAccessbtn>Get unlimited access</GetAccessbtn>
       <Searchbar></Searchbar>
+      <BsSearch
+        style={{
+          position: "absolute",
+          top: "125px",
+          right: "320px",
+        }}
+      />
       <div
         style={{
           marginTop: "15%",
@@ -103,10 +111,26 @@ const SideBar = () => {
                       padding: "1%",
                     }}
                   />
-                  <p>{el.name}</p>
+                  <p
+                    style={{
+                      marginLeft: "2%",
+                      marginTop: "1%",
+                      fontSize: "15px",
+                    }}
+                  >
+                    {el.name}
+                  </p>
                 </div>
                 <div>
-                  <h5>{el.description}</h5>
+                  <h5
+                    style={{
+                      marginLeft: "4%",
+                      fontWeight: "bold",
+                      fontSize: "17px",
+                    }}
+                  >
+                    {el.description}
+                  </h5>
                 </div>
               </div>
             </a>

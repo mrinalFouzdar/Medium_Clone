@@ -12,22 +12,32 @@ import AfterLogincomp from "./LoginComp/AfterLogincomp";
 import { Loading } from "./Components/Loginpage/Loading";
 import { Lastblog } from "./Components/Afterpublish/Lastblog";
 import { Leftafterpublish } from "./Components/Afterpublish/Leftafterpublish";
-import { ChakraProvider } from "@chakra-ui/react";
 import { Landingright } from "./Components/Landingpage/Landingright";
 import { Landingleft } from "./Components/Landingpage/Landingleft";
-import ListOfStory from "./AfterLogIn/BlogWrite/ListOfStory";
-import { useSelector } from "react-redux";
+import SideBar from "./LoginComp/Sidebar";
+import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
 import Navbar2 from "./LoginComp/Navbar2";
+import YourStory from "./AfterLogIn/BlogWrite/YourStory";
+import Notifications from "./LoginComp/Notifications";
+import { List } from "./LoginComp/List";
+import { loadData } from "./Localstorage";
+import { isAuthorized } from "./Redux/IsAuth/action";
+const Div = styled.div`
+  display: ${(props) => (props.Data ? "flex" : "block")};
+  justify-content: ${(props) => (props.Data ? "space-between" : "null")};
+`;
 const App = () => {
-  let AuthDetails = useSelector((state) => state.IsAuth);
-  let navigate = useNavigate();
-  console.log(AuthDetails.IsAuth);
-  if (AuthDetails.IsAuth === true) {
-    <Navigate to="/afterLogincomp" />;
+  const dispatch = useDispatch();
+
+  if (loadData("userDetails").length > 0) {
+    dispatch(isAuthorized(true));
   }
-  return AuthDetails.IsAuth === false ? (
-    <div>
-      <Navbar />
+  const Data = useSelector((store) => store.IsAuth.IsAuth);
+  console.log(Data);
+  return (
+    <Div Data={Data}>
+      {Data ? <Navbar2 /> : <Navbar />}
       <Routes>
         <Route path="/" element={<Landingpage />} />
         <Route path="/ourStory" element={<OurStorymain />} />
@@ -37,24 +47,19 @@ const App = () => {
         <Route path="/startIn" element={<Login />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/loading" element={<Loading />} />
-        <Route path="/afterLogincomp" element={<AfterLogincomp />} />
-        {/* <Route path="/home" element={<Lastblog />} /> */}
-        {/* <Route path="/allpublished" element={<ListOfStory />} /> */}
-      </Routes>{" "}
+        <Route path="/list" element={<List />} />
+        <Route path="/WriteBlog" element={<WriteBlog />} />
+        <Route path="/YourStory" element={<YourStory />} />
+        <Route path="/Notifications" element={<Notifications />} />
+      </Routes>
       {/* <Landingleft /> */}
       {/* <Landingpage /> */}
       {/* <Leftafterpublish /> */}
-      {/* <WriteBlog /> */}
-      {/* <Navbar2 />
-       <SideBar></SideBar> */}
-    </div>
-  ) : (
-    <>
-      <Navbar2 />
-      <Routes>
-        <Route path="/home" element={<Lastblog />} />
-      </Routes>
-    </>
+      {/* <WriteBlog/> */}
+      {/* <YourStory/> */}
+      {Data ? <SideBar /> : null}
+      {/* <Landingleft/> */}
+    </Div>
   );
 };
 

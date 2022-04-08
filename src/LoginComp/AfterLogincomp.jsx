@@ -1,7 +1,8 @@
 import React from "react";
 import Navbar2 from "./Navbar2";
 import SideBar from "./Sidebar";
-import List from "./List";
+import { List } from "./List";
+import Notifications from "./Notifications";
 
 import ListOfStory from "../AfterLogIn/BlogWrite/ListOfStory";
 import { Route, Routes } from "react-router-dom";
@@ -16,12 +17,9 @@ const AfterLogincomp = () => {
         justifyContent: "space-between",
       }}
     >
-      <Navbar2 />
-      <Routes>
-        <Route path="/home" element={<Lastblog />} />
-        <Route path="/allpublished" element={<ListOfStory />} />
-      </Routes>
-      {/* <Lastblog /> */}
+      <Navbar2></Navbar2>
+      {/* <List /> */}
+      <Notifications />
       <SideBar />
     </div>
   );

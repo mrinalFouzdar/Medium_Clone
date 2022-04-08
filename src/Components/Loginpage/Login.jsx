@@ -28,11 +28,12 @@ export const Login = () => {
     let i = 1;
     user.map((eachuser) =>
       eachuser === res.profileObj.email
-        ? (dispatch(isAuthorized(true)),
-          i === 1 ? alert("successfull") : console.log("something"),
+        ? // dispatch(isAuthorized(true)),
+          (i === 1 ? alert("successfull") : console.log("something"),
           i++,
           userDetails.push(res.profileObj),
-          saveData("userDetails", userDetails))
+          saveData("userDetails", userDetails),
+          navigate("/loading"))
         : console.log("hallo")
     );
 

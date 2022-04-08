@@ -195,7 +195,9 @@ export const HeroBlue = ({ heading, description1, description2 }) => {
             <br />
             in new directions.
           </HeadingCustom>
-          <CyanAccessButton>Get unlimited Access</CyanAccessButton>
+          <CyanAccessButton onClick={getUnlimited}>
+            Get unlimited Access
+          </CyanAccessButton>
         </div>
         <img
           src="https://cdn-static-1.medium.com/sites/medium.com/membership/images/Membership_Footer.svg"

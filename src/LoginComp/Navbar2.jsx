@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.Module.css";
-
+import { useDispatch, useSelector } from "react-redux";
+import { isAuthorized } from "../Redux/IsAuth/action";
 import { Link } from "react-router-dom";
 import { ImHome } from "react-icons/im";
 import { VscBell } from "react-icons/vsc";
@@ -26,6 +27,7 @@ const Dropupdiv = styled.div`
   display: ${(props) => props.display};
 `;
 const Navbar2 = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const curuser = loadData("userDetails");
   const userimage = curuser[0].imageUrl;
@@ -33,7 +35,7 @@ const Navbar2 = () => {
   const name = curuser[0].givenName + " " + curuser[0].familyName;
   const [display, setdisplay] = React.useState("none");
   const handleToggle = () => {
-    if (display == "none") {
+    if (display === "none") {
       setdisplay("block");
     } else {
       setdisplay("none");
@@ -41,6 +43,7 @@ const Navbar2 = () => {
   };
   const handleLogout = () => {
     saveData("userDetails", []);
+    dispatch(isAuthorized(false));
     navigate("/");
   };
   return (
@@ -71,21 +74,19 @@ const Navbar2 = () => {
               {/* </a> */}
             </li>
             <li className="l-i">
-              {/* <a> */}
-              <Link to="/allpublished">
+              <Link to="/Notifications">
                 <VscBell className="icons" />
               </Link>
-              {/* </a> */}
             </li>
             <li className="l-i">
-              {/* <a> */}
-              <BsBookmarks className="icons" />
-              {/* </a> */}
+              <Link to="/list">
+                <BsBookmarks className="icons" />
+              </Link>
             </li>
             <li className="l-i">
-              {/* <a> */}
-              <CgNotes className="icons" />
-              {/* </a> */}
+              <Link to="/YourStory">
+                <CgNotes className="icons" />
+              </Link>
             </li>
             <div
               style={{
@@ -97,9 +98,9 @@ const Navbar2 = () => {
               }}
             ></div>
             <li className="l-i">
-              {/* <a> */}
-              <BsPencilSquare className="icons"></BsPencilSquare>
-              {/* /</li></a> */}
+              <Link to="/WriteBlog">
+                <BsPencilSquare className="icons"></BsPencilSquare>
+              </Link>
             </li>
           </ul>
         </div>
@@ -144,7 +145,7 @@ const Navbar2 = () => {
                 src={userimage}
                 alt=""
                 style={{
-                  width: "30px",
+                  width: "35px",
                   borderRadius: "50%",
                   cursor: "pointer",
                 }}
