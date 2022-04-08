@@ -50,6 +50,8 @@
 .ap61 > h1 {
   color: black;
   margin-bottom: 25px;
+  font-size: 30px;
+  font-weight: 600;
 }
 .ap62 > p {
   color: black;
@@ -83,6 +85,10 @@
   flex-wrap: wrap;
   flex-direction: column;
 }
+.ap8 {
+  font-size: 14px;
+  font-weight: 600;
+}
 .ap91 {
   padding-left: auto;
 }
@@ -91,20 +97,25 @@
   /* margin-left: auto; */
   display: flex;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 .ap9111 {
   display: flex;
   margin-left: auto;
+  cursor: pointer;
 }
 .ap9h {
   margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: 600;
   color: rgb(0 0 0 / 80%);
 }
 .ap9p {
   font-weight: 400;
-  olor: rgb(117 117 117);
+  color: rgb(100, 99, 99);
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 20px;
 }
 .ap9 > p {
   margin-top: 20px;
@@ -134,4 +145,49 @@
   box-sizing: border-box;
   color: white;
   font-weight: 500;
+  cursor: pointer;
+}
+/* ********************************************************************* */
+.load1 {
+  text-align: center;
+  justify-items: center;
+}
+
+.load2 {
+  margin: auto;
+}
+.load3 {
+  margin-top: 300px;
+  width: 175px;
+  margin: auto;
+}
+.load4 {
+  margin: auto;
+  margin-top: 6%;
+}
+/* ************************************************************************************* */
+/* .pl1 {
+  width: 130px;
+  height: 270px;
+  background-color: black;
+  position: absolute;
+  border-radius: 5px;
+  color: white;
+  margin-top: 50px;
+  margin-left: -50px;
+  text-align: center;
+  display: none;
+} */
+.pl11 {
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+.pl11 > p {
+  margin: 10px;
+}
+.pl12 {
+  margin: 20px;
+}
+.pl13 {
+  margin: 20px;
 }

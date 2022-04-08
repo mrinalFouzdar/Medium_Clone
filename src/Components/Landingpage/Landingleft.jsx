@@ -1,40 +1,46 @@
 import React from "react";
 import styles from "../../styles/Landingpage.module.css";
 import ti1 from "../../styles/Image/t1.jpeg";
+
 export const Landingleft = () => {
   const [ldata, setLdata] = React.useState([]);
   const [adata, setAdata] = React.useState([]);
   // let api1 = "eab0fd7b29ce4560a915d616621a2335";
   let api1 = "5a917577b74147bbbf783b3f25e3807b";
-
+  // console.log(ldata);
+  // console.log(adata);
   React.useEffect(() => {
-    if (ldata.length !== 0 || adata.length !== 0) {
-      fetch(
-        `http://api.mediastack.com/v1/news?access_key=b3c4fdcbc5ebc5a8acb86fa26a211a2b&limit=100&languages=en`
-      )
-        .then((res) => res.json())
-        .then((res) => setLdata(res.data))
-        .catch((err) => console.log(err));
-      fetch(
-        `https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=${api1}`
-      )
-        .then((res) => res.json())
-        .then((res) => setAdata(res.articles));
-      // console.log(adata);
-      fetch(` https://newsapi.org/v2/everything?q=bitcoin&apiKey=${api1}`)
-        .then((res) => res.json())
-        .then((res) => setAdata([...adata, ...res.articles]));
+    fetch(
+      `http://api.mediastack.com/v1/news?access_key=b3c4fdcbc5ebc5a8acb86fa26a211a2b&limit=100&languages=en`
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        setLdata(res.data);
+      })
+      .catch((err) => console.log(err));
+    fetch(
+      `https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=${api1}`
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        setAdata(res.articles);
+      });
+    console.log(adata);
+    fetch(` https://newsapi.org/v2/everything?q=bitcoin&apiKey=${api1}`)
+      .then((res) => res.json())
+      .then((res) => setAdata([...adata, ...res.articles]));
 
-      fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${api1}`)
-        .then((res) => res.json())
-        .then((res) => setAdata([...adata, ...res.articles]));
-      fetch(
-        `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${api1}`
-      )
-        .then((res) => res.json())
-        .then((res) => setAdata([...adata, ...res.articles]));
-      console.log("hallo");
-    }
+    fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${api1}`)
+      .then((res) => res.json())
+      .then((res) => setAdata([...adata, ...res.articles]));
+    fetch(
+      `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${api1}`
+    )
+      .then((res) => res.json())
+      .then((res) => setAdata([...adata, ...res.articles]));
+    console.log("hallo");
   }, []);
 
   return (
@@ -74,7 +80,7 @@ export const Landingleft = () => {
                   width="15"
                   height="15"
                   viewBox="0 0 15 15"
-                  aria-label="Member only content"
+                  ariaLabel="Member only content"
                 >
                   <path d="M7.44 2.32c.03-.1.09-.1.12 0l1.2 3.53a.29.29 0 0 0 .26.2h3.88c.11 0 .13.04.04.1L9.8 8.33a.27.27 0 0 0-.1.29l1.2 3.53c.03.1-.01.13-.1.07l-3.14-2.18a.3.3 0 0 0-.32 0L4.2 12.22c-.1.06-.14.03-.1-.07l1.2-3.53a.27.27 0 0 0-.1-.3L2.06 6.16c-.1-.06-.07-.12.03-.12h3.89a.29.29 0 0 0 .26-.19l1.2-3.52z"></path>
                 </svg>
@@ -84,7 +90,7 @@ export const Landingleft = () => {
                     height="25"
                     viewBox="0 0 25 25"
                     fill="none"
-                    class="lt"
+                    className="lt"
                   >
                     <path
                       d="M18 2.5a.5.5 0 0 1 1 0V5h2.5a.5.5 0 0 1 0 1H19v2.5a.5.5 0 1 1-1 0V6h-2.5a.5.5 0 0 1 0-1H18V2.5zM7 7a1 1 0 0 1 1-1h3.5a.5.5 0 0 0 0-1H8a2 2 0 0 0-2 2v14a.5.5 0 0 0 .8.4l5.7-4.4 5.7 4.4a.5.5 0 0 0 .8-.4v-8.5a.5.5 0 0 0-1 0v7.48l-5.2-4a.5.5 0 0 0-.6 0l-5.2 4V7z"
@@ -135,7 +141,7 @@ export const Landingleft = () => {
                 width="15"
                 height="15"
                 viewBox="0 0 15 15"
-                aria-label="Member only content"
+                ariaLabel="Member only content"
               >
                 <path d="M7.44 2.32c.03-.1.09-.1.12 0l1.2 3.53a.29.29 0 0 0 .26.2h3.88c.11 0 .13.04.04.1L9.8 8.33a.27.27 0 0 0-.1.29l1.2 3.53c.03.1-.01.13-.1.07l-3.14-2.18a.3.3 0 0 0-.32 0L4.2 12.22c-.1.06-.14.03-.1-.07l1.2-3.53a.27.27 0 0 0-.1-.3L2.06 6.16c-.1-.06-.07-.12.03-.12h3.89a.29.29 0 0 0 .26-.19l1.2-3.52z"></path>
               </svg>
@@ -145,7 +151,7 @@ export const Landingleft = () => {
                   height="25"
                   viewBox="0 0 25 25"
                   fill="none"
-                  class="lt"
+                  className="lt"
                 >
                   <path
                     d="M18 2.5a.5.5 0 0 1 1 0V5h2.5a.5.5 0 0 1 0 1H19v2.5a.5.5 0 1 1-1 0V6h-2.5a.5.5 0 0 1 0-1H18V2.5zM7 7a1 1 0 0 1 1-1h3.5a.5.5 0 0 0 0-1H8a2 2 0 0 0-2 2v14a.5.5 0 0 0 .8.4l5.7-4.4 5.7 4.4a.5.5 0 0 0 .8-.4v-8.5a.5.5 0 0 0-1 0v7.48l-5.2-4a.5.5 0 0 0-.6 0l-5.2 4V7z"
