@@ -156,17 +156,17 @@ const Navbar2 = () => {
                     color: "rgba(117, 117, 117, 1)",
                   }}
                 >
-                  {/* @{useremail.slice(0, 17)} */}hello
+                  @{useremail.slice(0, 17)}
                 </p>
               </div>
             </div>
           </Dropupdiv>
-          {/* <img
+          <img
             src={userimage}
             alt=""
             style={{ width: "30px", borderRadius: "50%", cursor: "pointer" }}
             onClick={handleToggle}
-          /> */}
+          />
         </div>
       </div>
     </div>
