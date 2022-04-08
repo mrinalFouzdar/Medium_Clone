@@ -3,6 +3,7 @@ import styled from "styled-components";
 import "./List.Module.css";
 import Saved from "./Saved";
 import Highlight from "./Highlight";
+import { Margin } from "@mui/icons-material";
 const Listbtn = styled.button`
   background: rgb(26, 137, 23);
   padding: 7px 20px 9px;
@@ -66,7 +67,10 @@ export const List = () => {
   return (
     <div
       style={{
-        width: "50%",
+        width: "45%",
+        margin: "auto",
+        position: "absolute",
+        marginLeft: "15vw",
       }}
     >
       <div className="top-box">

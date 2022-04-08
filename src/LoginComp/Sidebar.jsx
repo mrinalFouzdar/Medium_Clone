@@ -66,14 +66,16 @@ const SideBar = () => {
         width: "26.5%",
         borderLeft: "1px solid #dcdcdc",
         display: "flex",
-        // position: "fixed",
-        zIndex: "1000",
-        top: "0",
+        position: "fixed",
+        // zIndex: "2",
+        // top: "100",
+        right: "0px",
         // left: "120vh",
         margimLeft: "auto",
         flexDirection: "column",
         alignItems: "center",
         minHeight: "100vh;",
+        overflowY: "scroll",
       }}
     >
       <GetAccessbtn>Get unlimited access</GetAccessbtn>

@@ -7,6 +7,12 @@ import styled from "styled-components";
 const Div = styled.div`
   /* padding:60px 400px 0px 400px; */
   padding-top: 50px;
+
+  width: 65%;
+  margin-top: 50px;
+  margin: auto;
+  position: absolute;
+  margin-left: 4vw;
   .writeForm {
     position: relative;
   }

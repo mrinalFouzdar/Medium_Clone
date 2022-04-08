@@ -1,13 +1,15 @@
 .navbar {
-  width: 100px;
+  width: 90px !important;
   height: 100vh;
-  box-shadow: 2px 2px 2px 1px whitesmoke;
+  /* box-shadow: 2px 2px 2px 1px whitesmoke; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-color: white;
   position: fixed;
   border-right: 1px solid #dcdcdc;
+  box-sizing: border-box;
 }
 .list-icons {
   list-style: none;
@@ -15,14 +17,15 @@
   flex-direction: column;
 }
 .icons {
-  width: 300px;
-  height: 25px;
-  margin-top: 10%;
+  width: 150px;
+  /* height: 25px; */
+  margin-top: 22%;
   cursor: pointer;
   color: #231f20;
 }
 .first-box {
-  margin-top: 20%;
+  margin-top: 0px;
+  margin-bottom: 40px;
 }
 .last-box {
   position: relative;
@@ -39,4 +42,7 @@
 }
 .drop-list > li:hover {
   color: rgba(26, 137, 23, 1);
+}
+.hrline {
+  margin: 15px 0px;
 }

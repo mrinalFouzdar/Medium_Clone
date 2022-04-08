@@ -6,7 +6,7 @@ import { DeleteIcon } from "@chakra-ui/icons";
 import { loadData } from "../../Localstorage";
 // import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 // import DeleteIcon from "@mui/icons-material/Delete";
-
+import CircularProgress from "@mui/material/CircularProgress";
 export const Lastblog = () => {
   let userDetails = loadData("userDetails");
   const [bdata, setBdata] = React.useState([]);
@@ -37,15 +37,14 @@ export const Lastblog = () => {
         </svg>
       </div>
       <div className={styles.load4}>
-        <Spinner
+        {/* <Spinner
           thickness="4px"
           speed="0.65s"
           emptyColor="gray.200"
           color="blue.500"
           size="xl"
-        />
-        <Spinner size="xl" />
-        hallo
+        /> */}
+        <CircularProgress />
       </div>
     </div>
   ) : iserror ? (
