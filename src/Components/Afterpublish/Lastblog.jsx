@@ -1,43 +1,16 @@
 import React from "react";
 import styles from "../../styles/publish.module.css";
 // import prf from "../../styles/Image/t6.jpeg";
-import { Spinner } from "@chakra-ui/react";
+import { Spinner } from "@chakra-ui/spinner";
+import { DeleteIcon } from "@chakra-ui/icons";
 import { loadData } from "../../Localstorage";
-import styled from "styled-components";
-const Hidepop = styled.div`
-  width: 130px;
-  height: 270px;
-  // background-color: black;
-  position: absolute;
-  border-radius: 5px;
-  color: black;
-  margin-top: 30px;
-  margin-left: -50px;
-  text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  z-index: 1000;
-  background-color: white;
-  display: ${(props) => (props.vis === true ? "flex" : "none")};
-`;
-const Pl11 = styled.div`
-  margin-top: 15px;
-  margin-bottom: 15px;
-`;
-const Plp = styled.p`
-  margin-top: 15px;
-  margin-bottom: 15px;
-`;
-const Pl12 = styled.p`
-  margin: 15px;
-  color: red;
-`;
-const Pl13 = styled.div`
-  margin: 15px;
-`;
+// import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+// import DeleteIcon from "@mui/icons-material/Delete";
+
 export const Lastblog = () => {
   let userDetails = loadData("userDetails");
   const [bdata, setBdata] = React.useState([]);
-  const [displaypopup, setDisplaypoup] = React.useState(false);
+
   const [isloading, setIsloading] = React.useState(true);
   const [iserror, setIsError] = React.useState(false);
   const getData = () => {
@@ -50,9 +23,7 @@ export const Lastblog = () => {
       .catch((err) => setIsError(true))
       .finally(() => setIsloading(false));
   };
-  const handledisplaypopup = () => {
-    setDisplaypoup(true);
-  };
+
   React.useEffect(() => {
     getData();
   }, []);
@@ -66,7 +37,15 @@ export const Lastblog = () => {
         </svg>
       </div>
       <div className={styles.load4}>
+        <Spinner
+          thickness="4px"
+          speed="0.65s"
+          emptyColor="gray.200"
+          color="blue.500"
+          size="xl"
+        />
         <Spinner size="xl" />
+        hallo
       </div>
     </div>
   ) : iserror ? (
@@ -76,10 +55,10 @@ export const Lastblog = () => {
       <div className={styles.ap1}>
         <div className={styles.ap2}>
           <div className={styles.ap3}>
-            <img src={userDetails[0].imageUrl} alt="" />
+            {/* <img src={userDetails[0].imageUrl} alt="" /> */}
           </div>
           <div className={styles.ap4}>
-            <h4>{userDetails[0].name}</h4>
+            {/* <h4>{userDetails[0].name}</h4> */}
             <p>hey how are you</p>
           </div>
           <div className={styles.ap5}>
@@ -144,14 +123,6 @@ export const Lastblog = () => {
           </div>
         </div>
         <div className={styles.ap6}>
-          {/* <div>
-          {bdata.map((item) => (
-            <div>
-              <h1>{item.title}</h1>
-            </div>
-          ))}
-        </div> */}
-
           <div className={styles.ap61}>
             <h1>{bdata[0].title}</h1>
           </div>
@@ -261,31 +232,13 @@ export const Lastblog = () => {
                           fill="#000"
                         ></path>
                       </svg>
+                      <DeleteIcon />
                     </div>
                     <div className={styles.ap911}>
                       {/* **************************************************** */}
-                      <Hidepop vis={displaypopup}>
-                        <div>
-                          <Pl11>
-                            <Plp>Edit story</Plp>
-                            <Plp>Edit story</Plp>
-                          </Pl11>
-                          <hr />
-                          <Pl11>
-                            <Plp>Edit story</Plp>
-                            <Plp>Edit story</Plp>
-                          </Pl11>
-                          <hr />
-                          <Pl13>
-                            {" "}
-                            <Plp>Edit story</Plp>
-                            <Pl12>Edit story</Pl12>
-                          </Pl13>
-                        </div>
-                      </Hidepop>
 
                       {/* ***************************************** */}
-                      <svg
+                      {/* <svg
                         onClick={handledisplaypopup}
                         className="bk kv ku"
                         width="25"
@@ -295,7 +248,7 @@ export const Lastblog = () => {
                           d="M5 12.5c0 .55.2 1.02.59 1.41.39.4.86.59 1.41.59.55 0 1.02-.2 1.41-.59.4-.39.59-.86.59-1.41 0-.55-.2-1.02-.59-1.41A1.93 1.93 0 0 0 7 10.5c-.55 0-1.02.2-1.41.59-.4.39-.59.86-.59 1.41zm5.62 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.42.59.55 0 1.02-.2 1.41-.59.4-.39.59-.86.59-1.41 0-.55-.2-1.02-.59-1.41a1.93 1.93 0 0 0-1.41-.59c-.55 0-1.03.2-1.42.59-.39.39-.58.86-.58 1.41zm5.6 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.43.59.56 0 1.03-.2 1.42-.59.39-.39.58-.86.58-1.41 0-.55-.2-1.02-.58-1.41a1.93 1.93 0 0 0-1.42-.59c-.56 0-1.04.2-1.43.59-.39.39-.58.86-.58 1.41z"
                           fillRule="evenodd"
                         ></path>
-                      </svg>
+                      </svg> */}
                     </div>
                   </div>
                   <hr className={styles.hr} />

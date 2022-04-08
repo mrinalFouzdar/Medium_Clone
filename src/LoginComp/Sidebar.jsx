@@ -2,10 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { MdOutlineBookmarkAdd } from "react-icons/md";
 import { BsSearch } from "react-icons/bs";
+import { StickyNote2 } from "@mui/icons-material";
 
 const GetAccessbtn = styled.button`
-  width: 70%;
-  height: 20px;
+  width: 82%;
+  height: 40px;
   background-color: #222;
   color: #fff;
   text-align: center;
@@ -13,12 +14,14 @@ const GetAccessbtn = styled.button`
   padding-bottom: 5%;
   border-radius: 20px;
   margin-top: 10%;
+  font-weight: 400;
+  outline: none;
 `;
 const Searchbar = styled.input.attrs({ type: "text", placeholder: "Search" })`
   background-color: transparent;
   margin-top: 10%;
   padding: 10px 30px 11px;
-  width: 70%;
+  width: 82%;
   border: 1px solid #dcdcdc;
   border-radius: 20px;
 `;
@@ -60,11 +63,17 @@ const SideBar = () => {
   return (
     <div
       style={{
-        width: "30%",
+        width: "26.5%",
         borderLeft: "1px solid #dcdcdc",
         display: "flex",
+        // position: "fixed",
+        zIndex: "1000",
+        top: "0",
+        // left: "120vh",
+        margimLeft: "auto",
         flexDirection: "column",
         alignItems: "center",
+        minHeight: "100vh;",
       }}
     >
       <GetAccessbtn>Get unlimited access</GetAccessbtn>
@@ -72,13 +81,15 @@ const SideBar = () => {
       <BsSearch
         style={{
           position: "absolute",
-          top: "125px",
-          right: "320px",
+          top: "130px",
+
+          marginLeft: "150px",
+          zIndex: 1000,
         }}
       />
       <div
         style={{
-          marginTop: "15%",
+          marginTop: "10px",
         }}
       >
         {users.map((el) => {

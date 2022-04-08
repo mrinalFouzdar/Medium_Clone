@@ -21,7 +21,7 @@ import Navbar2 from "./LoginComp/Navbar2";
 import YourStory from "./AfterLogIn/BlogWrite/YourStory";
 import Notifications from "./LoginComp/Notifications";
 import { List } from "./LoginComp/List";
-import { loadData } from "./Localstorage";
+import { loadData, saveData } from "./Localstorage";
 import { isAuthorized } from "./Redux/IsAuth/action";
 const Div = styled.div`
   display: ${(props) => (props.Data ? "flex" : "block")};
@@ -30,10 +30,15 @@ const Div = styled.div`
 const App = () => {
   const dispatch = useDispatch();
 
-  if (loadData("userDetails").length > 0) {
+  if (loadData("userDetails") != null && loadData("userDetails").length !== 0) {
     dispatch(isAuthorized(true));
+  } else {
+    dispatch(isAuthorized(false));
+    console.log("hallo");
   }
-  const Data = useSelector((store) => store.IsAuth.IsAuth);
+
+  let Data = useSelector((store) => store.IsAuth.IsAuth);
+  // Data = true;
   console.log(Data);
   return (
     <Div Data={Data}>
@@ -52,16 +57,18 @@ const App = () => {
         <Route path="/YourStory" element={<YourStory />} />
         <Route path="/Notifications" element={<Notifications />} />
       </Routes>
-      {/* <Landingleft /> */}
-      {/* <Landingpage /> */}
-      {/* <Leftafterpublish /> */}
-      {/* <WriteBlog/> */}
-      {/* <YourStory/> */}
+
       {Data ? <SideBar /> : null}
-      {/* <Landingleft/> */}
     </Div>
   );
 };
+
+// //  {/* <Landingleft /> */}
+//       {/* <Landingpage /> */}
+//       {/* <Leftafterpublish /> */}
+//       {/* <WriteBlog/> */}
+//       {/* <YourStory/> */}
+//  {/* <Landingleft/> */}
 
 // return
 // AuthDetails===false?

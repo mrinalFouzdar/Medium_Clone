@@ -2,7 +2,7 @@ import React from "react";
 import "./Navbar.Module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { isAuthorized } from "../Redux/IsAuth/action";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { ImHome } from "react-icons/im";
 import { VscBell } from "react-icons/vsc";
 import { BsBookmarks, BsPencilSquare } from "react-icons/bs";
@@ -16,24 +16,44 @@ import { loadData, saveData } from "../Localstorage.js";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 const Dropupdiv = styled.div`
-  width: 300px;
-  height: 80vh;
+  width: 275px;
+  border-radius: 5px;
+  height: 70vh;
   background-color: white;
-  box-shadow: 5px 5px 5px 5px whitesmoke;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   position: absolute;
   font-size: 14px;
-  bottom: 45px;
-  left: 3px;
+  bottom: 50px;
+  z-index: 10000;
+  left: -10px;
   display: ${(props) => props.display};
 `;
+const StylLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  font-weight: 12px;
+  font-size: 12px;
+  z-index: 1000;
+`;
+const P = styled.p`
+  text-decoration: none;
+  color: black;
+  font-weight: 12px;
+  font-size: 12px;
+  z-index: 1000;
+`;
 const Navbar2 = () => {
+  const [display, setdisplay] = React.useState("none");
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const curuser = loadData("userDetails");
+  if (curuser === null || curuser.length === 0) {
+    <Navigate to="/" />;
+  }
   const userimage = curuser[0].imageUrl;
   const useremail = curuser[0].email;
-  const name = curuser[0].givenName + " " + curuser[0].familyName;
-  const [display, setdisplay] = React.useState("none");
+  const name = curuser[0].name;
+
   const handleToggle = () => {
     if (display === "none") {
       setdisplay("block");
@@ -41,11 +61,13 @@ const Navbar2 = () => {
       setdisplay("none");
     }
   };
+
   const handleLogout = () => {
     saveData("userDetails", []);
     dispatch(isAuthorized(false));
     navigate("/");
   };
+
   return (
     <div>
       <div className="navbar">
@@ -108,29 +130,29 @@ const Navbar2 = () => {
           <Dropupdiv display={display}>
             <ul className="drop-list">
               <li>
-                <a>Medium Partner program</a>
+                <StylLink to="/medium">Medium Partner program</StylLink>
               </li>
               <li>
-                <a>Gift a membership</a>
+                <P>Gift a membership</P>
               </li>
               <li>
-                <a>Become a member</a>
+                <P>Become a member</P>
               </li>
               <hr />
               <li onClick={handleLogout}>
-                <a>Sign out</a>
+                <P>Sign out</P>
               </li>
               <li>
-                <a>Refine recommendations</a>
+                <P>Refine recommendations</P>
               </li>
               <li>
-                <a>Manage publications</a>
+                <P>Manage publications</P>
               </li>
               <li>
-                <a>Stats</a>
+                <P>Stats</P>
               </li>
               <li>
-                <a>Settings</a>
+                <P>Settings</P>
               </li>
             </ul>
             <hr />
