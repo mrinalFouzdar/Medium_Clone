@@ -9,7 +9,7 @@ export const Loading = () => {
     const timer = setTimeout(() => {
       console.log("This will run after 1 second!");
       navigate("/AfterLogincomp");
-    }, 7000);
+    }, 5000);
     return () => clearTimeout(timer);
   }, []);
   return (

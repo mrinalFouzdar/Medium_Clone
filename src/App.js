@@ -10,14 +10,18 @@ import WriteBlog from "./Components/BlogWrite/WriteBlog";
 import { Signup } from "./Components/Loginpage/Signup";
 import AfterLogincomp from "./LoginComp/AfterLogincomp";
 import { Loading } from "./Components/Loginpage/Loading";
-
+import { Lastblog } from "./Components/Afterpublish/Lastblog";
+import { Leftafterpublish } from "./Components/Afterpublish/Leftafterpublish";
+import { ChakraProvider } from "@chakra-ui/react";
+import { Landingright } from "./Components/Landingpage/Landingright";
+import { Landingleft } from "./Components/Landingpage/Landingleft";
 const App = () => {
   return (
     <div>
       <Navbar />
       <Routes>
-        {/* <Route path="/" element={<Landingpage />} /> */}
-        {/* {/* <Route path="/ourStory" element={<OurStorymain />} /> */}
+        <Route path="/" element={<Landingpage />} />
+        <Route path="/ourStory" element={<OurStorymain />} />
         <Route path="/memberShip" element={<Membership />} />
         <Route path="/write" element={<Write />} />
         <Route path="/logIn" element={<Login />} />
@@ -26,7 +30,9 @@ const App = () => {
         <Route path="/loading" element={<Loading />} />
         <Route path="/AfterLogincomp" element={<AfterLogincomp />} />
       </Routes>
-
+      {/* <Landingleft /> */}
+      {/* <Landingpage /> */}
+      <Leftafterpublish />
       {/* <WriteBlog/> */}
       {/* <Navbar2 />
       <SideBar></SideBar> */}
