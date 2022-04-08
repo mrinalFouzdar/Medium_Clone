@@ -32,7 +32,7 @@ const Navbar2 = () => {
   const name = curuser[0].givenName + " " + curuser[0].familyName;
   const [display, setdisplay] = React.useState("none");
   const handleToggle = () => {
-    if (display == "none") {
+    if (display === "none") {
       setdisplay("block");
     } else {
       setdisplay("none");
@@ -73,14 +73,14 @@ const Navbar2 = () => {
               </a>
             </li>
             <li className="l-i">
-              <a>
+              <Link to="/List">
                 <BsBookmarks className="icons" />
-              </a>
+              </Link>
             </li>
             <li className="l-i">
-              <a>
+              <Link to="/YourStory">
                 <CgNotes className="icons" />
-              </a>
+              </Link>
             </li>
             <div
               style={{
@@ -156,17 +156,17 @@ const Navbar2 = () => {
                     color: "rgba(117, 117, 117, 1)",
                   }}
                 >
-                  @{useremail.slice(0, 17)}
+                  {/* @{useremail.slice(0, 17)} */}hello
                 </p>
               </div>
             </div>
           </Dropupdiv>
-          <img
+          {/* <img
             src={userimage}
             alt=""
             style={{ width: "30px", borderRadius: "50%", cursor: "pointer" }}
             onClick={handleToggle}
-          />
+          /> */}
         </div>
       </div>
     </div>

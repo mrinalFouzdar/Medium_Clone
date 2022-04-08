@@ -1,5 +1,9 @@
 import React from 'react'
+
 import styled from 'styled-components'
+import Published from './Published'
+import Responses from './Responses'
+import Drafts from './Drafts'
 
 const Main = styled.div`
     .main1{
@@ -13,56 +17,66 @@ const Main = styled.div`
         cursor: pointer;
 
     }
-    a:active{
-        color:black;
-        padding-bottom:15px;
-        border-bottom:2px solid black ;
+ 
+    .pblis{
+        /* margin-bottom:6px ; */
+        color:${(props)=> props.color==="Pablished" ? "black" :"rgba(117, 117, 117, 1)"} ;
+        /* border-bottom:${(props)=> props.color==="Pablished" ? "1px solid black" :"none"} ; */
     }
-    a{
-        text-decoration: none;
-        color:rgba(117, 117, 117, 1) ;
+    .resp{
+        color:${(props)=> props.color==="Responses" ? "black" :"rgba(117, 117, 117, 1)"} ;
+        /* border-bottom:${(props)=> props.color==="Responses" ? "1px solid black" :"none"} ; */
+
+    }
+    .draf{
+        color:${(props)=> props.color==="Drafts" ? "black" :"rgba(117, 117, 117, 1)"} ;
+        /* border-bottom:${(props)=> props.color==="Drafts" ? "1px solid black" :"none"} ; */
 
     }
    
 `
 
 export default function ListOfStory() {
+    const [publ,setPubl]=React.useState("Pablished")
+ 
 
-    const getJsonData=()=>{
-        fetch(`https://skbhardwaj.herokuapp.com/Blogs`)
-        .then((res)=>res.json())
-        .then((res)=>console.log(res))
+  
+    const handelRes=()=>{
+        setPubl("Responses")
     }
-
-    React.useEffect(()=>{
-        getJsonData()
-    },[])
+    const handleDrafts=()=>{
+        setPubl("Drafts")
+    }
+    const handlePablished=()=>{
+        setPubl("Pablished")
+    }
    
   return (
     <>
-        <Main>
+        <Main color={publ}>
             <div className='main1'>
-            <div >
-                <a href="#">
-                Published
-                </a>
+            <div onClick={handlePablished}  className="pblis" color={publ}>
+            {/* <a href="#"  > */}
+                Pablished
+                {/* </a> */}
             </div>    
-            <div >
-                <a href="#">
-                Responses
-                </a>
+            <div onClick={handelRes} className="resp">
+                Responses 
             </div>    
-            <div >
-                <a href="#">
-                Drafts
-                </a>
+            <div  onClick={handleDrafts} className="draf">
+                Drafts   
             </div>    
 
             </div>
-            <div>ava</div>
 
+        <div>
+
+        {
+            publ === "Pablished" ? <Published/> : publ=== "Responses" ? <Responses/> : <Drafts/>
+        }
+        </div>
         </Main>
-        {/* <hr /> */}
+          
     </>
   )
 }

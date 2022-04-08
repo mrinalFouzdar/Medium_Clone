@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import ListOfStory from './ListOfStory'
 
@@ -51,6 +52,11 @@ const Main=styled.div`
 `
 
 export default function YourStory() {
+
+    const nevigatwriteBlog=useNavigate();
+    const RouttoWriteBlog= ()=>{
+        nevigatwriteBlog("/writeBlog")
+    }
   return (
     <Main>
         <div className='mainDiv1'>
@@ -59,7 +65,7 @@ export default function YourStory() {
         </div>
         <div className='WriteStory'>
             <div className='story'>
-                <div>Write a story</div>
+                <div onClick={RouttoWriteBlog}>Write a story</div>
             </div>
             <div className='story import'>
                 <div>Import a story</div>
