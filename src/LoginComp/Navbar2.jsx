@@ -68,12 +68,12 @@ const Navbar2 = () => {
               </a>
             </li>
             <li className="l-i">
-              <a>
+              <Link to="/Notifications">
                 <VscBell className="icons" />
-              </a>
+              </Link>
             </li>
             <li className="l-i">
-              <Link to="/List">
+              <Link to="/list">
                 <BsBookmarks className="icons" />
               </Link>
             </li>
@@ -92,9 +92,9 @@ const Navbar2 = () => {
               }}
             ></div>
             <li className="l-i">
-              <a>
+              <Link to="/WriteBlog">
                 <BsPencilSquare className="icons"></BsPencilSquare>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

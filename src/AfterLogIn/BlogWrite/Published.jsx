@@ -4,7 +4,8 @@ import { getBlog } from '../../Redux/blogre/action'
 import styled from 'styled-components'
 const Div=styled.div`
 margin-right:0px;
-width: 1120px;
+/* width: 1120px; */
+box-sizing:border-box ;
  .logoDiv{
    display:flex ;
    margin-left:500px;

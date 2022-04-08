@@ -5,7 +5,7 @@ import ListOfStory from './ListOfStory'
 
 const Main=styled.div`
     font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin:50px 150px 50px 250px ;
+    margin:50px 100px 50px 200px ;
     .mainDiv1{
         display:flex ;
         margin-bottom:50px;
