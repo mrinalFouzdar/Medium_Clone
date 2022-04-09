@@ -8,6 +8,7 @@ import ListOfStory from "../AfterLogIn/BlogWrite/ListOfStory";
 import { Route, Routes } from "react-router-dom";
 import { Leftafterpublish } from "../Components/Afterpublish/Leftafterpublish";
 import { Lastblog } from "../Components/Afterpublish/Lastblog";
+import { Home } from "../AfterLogIn/Home";
 // import {Listof}
 const AfterLogincomp = () => {
   return (
@@ -19,7 +20,7 @@ const AfterLogincomp = () => {
     >
       <Navbar2></Navbar2>
       {/* <List /> */}
-      <Notifications />
+      <Home />
       <SideBar />
     </div>
   );
