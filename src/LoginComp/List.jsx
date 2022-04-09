@@ -104,7 +104,9 @@ export const List = () => {
             width: "80%",
             height: "80vh",
             background: "white",
-            boxShadow: "rgb(0 0 0 / 15%) 0px 2px 10px",
+            // boxShadow: "rgb(0 0 0 / 15%) 0px 2px 10px",
+            boxShadow:
+              " rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset",
             display: "flex",
             position: "absolute",
             flexDirection: "column",

@@ -18,14 +18,16 @@ import { useNavigate } from "react-router-dom";
 const Dropupdiv = styled.div`
   width: 275px;
   border-radius: 5px;
-  height: 65vh;
+  height: 68vh;
   background-color: white;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   position: absolute;
   font-size: 14px;
   bottom: 50px;
   z-index: 1;
-  left: -10px;
+  left: -20px;
   padding: 10px;
   display: ${(props) => props.display};
 `;
@@ -261,7 +263,7 @@ const Navbar2 = () => {
                   width: "35px",
                   borderRadius: "50%",
                   cursor: "pointer",
-                  marginTop: "50px",
+                  // marginTop: "50px",
                 }}
               />
               <div
@@ -284,7 +286,11 @@ const Navbar2 = () => {
           <img
             src={userimage}
             alt=""
-            style={{ width: "30px", borderRadius: "50%", cursor: "pointer" }}
+            style={{
+              width: "30px",
+              borderRadius: "50%",
+              cursor: "pointer",
+            }}
             onClick={handleToggle}
           />
         </div>

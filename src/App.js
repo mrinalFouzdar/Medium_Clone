@@ -23,6 +23,7 @@ import Notifications from "./LoginComp/Notifications";
 import { List } from "./LoginComp/List";
 import { loadData, saveData } from "./Localstorage";
 import { isAuthorized } from "./Redux/IsAuth/action";
+import { Home } from "./AfterLogIn/Home.jsx";
 const Div = styled.div`
   display: ${(props) => (props.Data ? "flex" : "block")};
   justify-content: ${(props) => (props.Data ? "space-between" : "null")};
@@ -36,7 +37,6 @@ const App = () => {
     dispatch(isAuthorized(false));
     console.log("hallo");
   }
-
   let Data = useSelector((store) => store.IsAuth.IsAuth);
   // Data = true;
   console.log(Data);
@@ -44,7 +44,7 @@ const App = () => {
     <Div Data={Data}>
       {Data ? <Navbar2 /> : <Navbar />}
       <Routes>
-        <Route path="/" element={<Landingpage />} />
+        {/* <Route path="/" element={<Landingpage />} /> */}
         <Route path="/ourStory" element={<OurStorymain />} />
         <Route path="/memberShip" element={<Membership />} />
         <Route path="/write" element={<Write />} />
@@ -53,12 +53,14 @@ const App = () => {
         <Route path="/register" element={<Signup />} />
         <Route path="/loading" element={<Loading />} />
         <Route path="/list" element={<List />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/WriteBlog" element={<WriteBlog />} />
         <Route path="/YourStory" element={<YourStory />} />
+        <Route path="/publish" element={<Lastblog />} />
         <Route path="/Notifications" element={<Notifications />} />
       </Routes>
       {/* <Lastblog /> */}
-
+      {/* <YourStory /> */}
       {Data ? <SideBar /> : null}
     </Div>
   );

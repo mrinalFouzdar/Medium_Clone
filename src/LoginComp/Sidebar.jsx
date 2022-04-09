@@ -76,6 +76,7 @@ const SideBar = () => {
         alignItems: "center",
         minHeight: "100vh;",
         overflowY: "scroll",
+        backgroundColor: "white",
       }}
     >
       <GetAccessbtn>Get unlimited access</GetAccessbtn>
@@ -83,9 +84,9 @@ const SideBar = () => {
       <BsSearch
         style={{
           position: "absolute",
-          top: "130px",
+          top: "128px",
 
-          marginLeft: "150px",
+          marginLeft: "-280px",
           zIndex: 1000,
         }}
       />
