@@ -36,13 +36,20 @@ export const Lastblog = () => {
         setBdata(res);
         setIsError(false);
       })
-      .catch((err) => setIsError(true))
-      .finally(() => setIsloading(false));
+      .catch((err) => setIsError(true));
   };
+  const soln = () => {
+    setIsloading(false);
+  };
+
+  setTimeout(() => {
+    soln();
+  }, 7000);
 
   React.useEffect(() => {
     getData();
   }, []);
+
   console.log(bdata);
   // };
   const handleDelte = (id) => {

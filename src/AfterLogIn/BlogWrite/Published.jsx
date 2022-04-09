@@ -157,18 +157,18 @@ export default function Published() {
         <div key={item.id} className="borderDiv">
           <h3>{item.title}</h3>
           {/* <button onClick={()=>handleDelte(item.id)}>Delete</button> */}
-          <h3 className="oneMore">{item.title}</h3>
+          <h3 className="oneMore">{item.story}</h3>
           <div className="logoDiv">
             <div className="svgh">
-              <div className="svgclass1">
-                <DeleteIcon
-                  className="delete"
-                  fontSize="large"
-                  onClick={() => handleDelte(item.id)}
-                />
-                {/* </li>
+              {/* <div className="svgclass1"> */}
+              <DeleteIcon
+                className="delete"
+                fontSize="large"
+                onClick={() => handleDelte(item.id)}
+              />
+              {/* </li>
               </ul> */}
-              </div>
+              {/* </div> */}
             </div>
           </div>
           {/* <hr/> */}
