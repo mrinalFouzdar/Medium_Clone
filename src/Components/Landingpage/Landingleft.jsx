@@ -7,19 +7,20 @@ export const Landingleft = () => {
   const [adata, setAdata] = React.useState([]);
   // let api1 = "eab0fd7b29ce4560a915d616621a2335";
   // let api1 = "5a917577b74147bbbf783b3f25e3807b";
-  let api1 = "2b3d6c4953fa44b981adeaf0ac881a6a";
+  // let api1 = "2b3d6c4953fa44b981adeaf0ac881a6a";
+  let api1 = "53c46429084244a89a858e42c3cce991";
   // console.log(ldata);
   // console.log(adata);
   React.useEffect(() => {
-    fetch(
-      `http://api.mediastack.com/v1/news?access_key=b3c4fdcbc5ebc5a8acb86fa26a211a2b&limit=100&languages=en`
-    )
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-        setLdata(res.data);
-      })
-      .catch((err) => console.log(err));
+    // fetch(
+    //   `http://api.mediastack.com/v1/news?access_key=b3c4fdcbc5ebc5a8acb86fa26a211a2b&limit=100&languages=en`
+    // )
+    //   .then((res) => res.json())
+    //   .then((res) => {
+    //     console.log(res);
+    //     setLdata(res.data);
+    //   })
+    //   .catch((err) => console.log(err));
     fetch(
       `https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=${api1}`
     )

@@ -219,7 +219,7 @@ export const Lastblog = () => {
           </div>
         </div>
         <div className={styles.ap8}>
-          <h2>More from saurabh kumar bhardwaj</h2>
+          <h2>More from Our Side</h2>
         </div>
 
         {bdata.map((eachdata, idx) => (
