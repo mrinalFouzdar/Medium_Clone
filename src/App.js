@@ -23,6 +23,7 @@ import Notifications from "./LoginComp/Notifications";
 import { List } from "./LoginComp/List";
 import { loadData, saveData } from "./Localstorage";
 import { isAuthorized } from "./Redux/IsAuth/action";
+import { Home } from "./AfterLogIn/Home.jsx";
 const Div = styled.div`
   display: ${(props) => (props.Data ? "flex" : "block")};
   justify-content: ${(props) => (props.Data ? "space-between" : "null")};
@@ -32,9 +33,7 @@ const App = () => {
 
   if (loadData("userDetails") != null && loadData("userDetails").length !== 0) {
     dispatch(isAuthorized(true));
-  }
-
-  else {
+  } else {
     dispatch(isAuthorized(false));
     console.log("hallo");
   }
@@ -54,11 +53,14 @@ const App = () => {
         <Route path="/register" element={<Signup />} />
         <Route path="/loading" element={<Loading />} />
         <Route path="/list" element={<List />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/WriteBlog" element={<WriteBlog />} />
         <Route path="/YourStory" element={<YourStory />} />
+        <Route path="/publish" element={<Lastblog />} />
         <Route path="/Notifications" element={<Notifications />} />
       </Routes>
-
+      {/* <Lastblog /> */}
+      {/* <YourStory /> */}
       {Data ? <SideBar /> : null}
     </Div>
   );

@@ -66,14 +66,17 @@ const SideBar = () => {
         width: "26.5%",
         borderLeft: "1px solid #dcdcdc",
         display: "flex",
-        // position: "fixed",
-        zIndex: "1000",
-        top: "0",
+        position: "fixed",
+        // zIndex: "2",
+        // top: "100",
+        right: "0px",
         // left: "120vh",
         margimLeft: "auto",
         flexDirection: "column",
         alignItems: "center",
         minHeight: "100vh;",
+        overflowY: "scroll",
+        backgroundColor: "white",
       }}
     >
       <GetAccessbtn>Get unlimited access</GetAccessbtn>
@@ -81,9 +84,9 @@ const SideBar = () => {
       <BsSearch
         style={{
           position: "absolute",
-          top: "130px",
+          top: "128px",
 
-          marginLeft: "150px",
+          marginLeft: "-280px",
           zIndex: 1000,
         }}
       />

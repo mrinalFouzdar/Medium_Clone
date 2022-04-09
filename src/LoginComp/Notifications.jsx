@@ -39,7 +39,10 @@ const Notifications = () => {
   return (
     <div
       style={{
-        width: "50%",
+        width: "45%",
+        margin: "auto",
+        position: "absolute",
+        marginLeft: "15vw",
       }}
     >
       <div
@@ -53,6 +56,11 @@ const Notifications = () => {
         <h1
           style={{
             fontFamily: `sohne, "Helvetica Neue", Helvetica, Arial, sans-serif`,
+            maxHeight: "52px",
+            lineHeight: "52px",
+            fontSize: " 42px",
+            fontWeight: "700",
+            color: "rgb(41 41 41)",
           }}
         >
           Notifications

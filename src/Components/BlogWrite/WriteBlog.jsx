@@ -3,10 +3,17 @@ import { GrAdd } from "react-icons/gr";
 import { useDispatch, useSelector } from "react-redux";
 import { getBlog } from "../../Redux/blogre/action";
 import styled from "styled-components";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Div = styled.div`
   /* padding:60px 400px 0px 400px; */
   padding-top: 50px;
+
+  width: 65%;
+  margin-top: 50px;
+  margin: auto;
+  position: absolute;
+  margin-left: 4vw;
   .writeForm {
     position: relative;
   }
@@ -67,7 +74,7 @@ export default function WriteBlog() {
   const dispatch = useDispatch();
   const blog1 = useSelector((store) => store);
   console.log(blog1);
-
+  const navigate = useNavigate();
   const handelBlog = (e) => {
     // console.log(e.target.value)
     const { name, value } = e.target;
@@ -103,6 +110,13 @@ export default function WriteBlog() {
         console.log(res);
         uptdateRedux();
       });
+    navigate("/publish");
+    // <Navigate to="/publish" />;
+    setBlog({
+      fileUpload: "",
+      title: "",
+      story: "",
+    });
   };
   const { fileUpload, title, story } = blog;
   return (
