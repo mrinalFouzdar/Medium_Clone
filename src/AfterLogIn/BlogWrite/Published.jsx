@@ -160,15 +160,15 @@ export default function Published() {
           <h3 className="oneMore">{item.story}</h3>
           <div className="logoDiv">
             <div className="svgh">
-              <div className="svgclass1">
-                <DeleteIcon
-                  className="delete"
-                  fontSize="large"
-                  onClick={() => handleDelte(item.id)}
-                />
-                {/* </li>
+              {/* <div className="svgclass1"> */}
+              <DeleteIcon
+                className="delete"
+                fontSize="large"
+                onClick={() => handleDelte(item.id)}
+              />
+              {/* </li>
               </ul> */}
-              </div>
+              {/* </div> */}
             </div>
           </div>
           {/* <hr/> */}
