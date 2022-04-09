@@ -45,7 +45,7 @@ const App = () => {
     <Div Data={Data}>
       {Data ? <Navbar2 /> : <Navbar />}
       <Routes>
-        {/* <Route path="/" element={<Landingpage />} /> */}
+        <Route path="/" element={<Landingpage />} />
         <Route path="/ourStory" element={<OurStorymain />} />
         <Route path="/memberShip" element={<Membership />} />
         <Route path="/write" element={<Write />} />

@@ -6,7 +6,8 @@ export const Landingleft = () => {
   const [ldata, setLdata] = React.useState([]);
   const [adata, setAdata] = React.useState([]);
   // let api1 = "eab0fd7b29ce4560a915d616621a2335";
-  let api1 = "5a917577b74147bbbf783b3f25e3807b";
+  // let api1 = "5a917577b74147bbbf783b3f25e3807b";
+  let api1 ="53c46429084244a89a858e42c3cce991"
   // console.log(ldata);
   // console.log(adata);
   React.useEffect(() => {
