@@ -112,6 +112,7 @@ export const List = () => {
             flexDirection: "column",
             alignItems: "center",
             top: "115px",
+            zIndex:"2000"
           }}
         >
           <h1>Create new list</h1>
