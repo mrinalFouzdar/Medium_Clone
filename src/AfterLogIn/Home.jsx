@@ -9,7 +9,7 @@ const Div = styled.div`
   width: 45%;
   margin: auto;
   position: absolute;
-  margin-left: 15vw;
+  margin-left: 14vw;
   margin-top: 4vh;
 `;
 const Wiv = styled.div`
@@ -69,7 +69,7 @@ export const Home = () => {
   // console.log(adata);
   React.useEffect(() => {
     fetch(
-      `http://api.mediastack.com/v1/news?access_key=b3c4fdcbc5ebc5a8acb86fa26a211a2b&limit=100&languages=en`
+      `http://api.mediastack.com/v1/news?access_key=4038b8fb0e6180d901d2109a989dd19c&limit=100&languages=en`
     )
       .then((res) => res.json())
       .then((res) => {
@@ -78,36 +78,36 @@ export const Home = () => {
       })
       .catch((err) => console.log(err))
       .finally(() => setIsLoading(false));
-    fetch(
-      `https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=${api1}`
-    )
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-        setAdata(res.articles);
-      })
-      .catch((err) => console.log(err))
-      .finally(() => setIsLoading(false));
-    console.log(adata);
-    fetch(` https://newsapi.org/v2/everything?q=bitcoin&apiKey=${api1}`)
-      .then((res) => res.json())
-      .then((res) => setAdata([...adata, ...res.articles]))
-      .catch((err) => console.log(err))
-      .finally(() => setIsLoading(false));
-    // setIsLoading(true);
-    fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${api1}`)
-      .then((res) => res.json())
-      .then((res) => setAdata([...adata, ...res.articles]))
-      .catch((err) => console.log(err))
-      .finally(() => setIsLoading(false));
+    // fetch(
+    //   `https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=${api1}`
+    // )
+    //   .then((res) => res.json())
+    //   .then((res) => {
+    //     console.log(res);
+    //     setAdata(res.articles);
+    //   })
+    //   .catch((err) => console.log(err))
+    //   .finally(() => setIsLoading(false));
+    // console.log(adata);
+    // fetch(` https://newsapi.org/v2/everything?q=bitcoin&apiKey=${api1}`)
+    //   .then((res) => res.json())
+    //   .then((res) => setAdata([...adata, ...res.articles]))
+    //   .catch((err) => console.log(err))
+    //   .finally(() => setIsLoading(false));
+    // // setIsLoading(true);
+    // fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${api1}`)
+    //   .then((res) => res.json())
+    //   .then((res) => setAdata([...adata, ...res.articles]))
+    //   .catch((err) => console.log(err))
+    //   .finally(() => setIsLoading(false));
 
-    fetch(
-      `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${api1}`
-    )
-      .then((res) => res.json())
-      .then((res) => setAdata([...adata, ...res.articles]))
-      .catch((err) => console.log(err))
-      .finally(() => setIsLoading(false));
+    // fetch(
+    //   `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${api1}`
+    // )
+    //   .then((res) => res.json())
+    //   .then((res) => setAdata([...adata, ...res.articles]))
+    //   .catch((err) => console.log(err))
+    //   .finally(() => setIsLoading(false));
     console.log("hallo");
   }, []);
 
@@ -192,7 +192,7 @@ export const Home = () => {
             </div>
           )
         )}
-        {adata.map((eblog, idx) => (
+        {/* {adata.map((eblog, idx) => (
           <div key={idx} className={styles.ll2}>
             <div className={styles.ll3}>
               <div className={styles.ll4}>
@@ -252,7 +252,7 @@ export const Home = () => {
             </div>
             <hr />
           </div>
-        ))}
+        ))} */}
       </Div>
     </>
   );

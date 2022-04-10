@@ -12,7 +12,7 @@ export const Landingleft = () => {
   // console.log(adata);
   React.useEffect(() => {
     fetch(
-      `http://api.mediastack.com/v1/news?access_key=b3c4fdcbc5ebc5a8acb86fa26a211a2b&limit=100&languages=en`
+      `http://api.mediastack.com/v1/news?access_key=4038b8fb0e6180d901d2109a989dd19c&limit=100&languages=en`
     )
       .then((res) => res.json())
       .then((res) => {
@@ -20,27 +20,27 @@ export const Landingleft = () => {
         setLdata(res.data);
       })
       .catch((err) => console.log(err));
-    fetch(
-      `https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=${api1}`
-    )
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-        setAdata(res.articles);
-      });
-    console.log(adata);
-    fetch(` https://newsapi.org/v2/everything?q=bitcoin&apiKey=${api1}`)
-      .then((res) => res.json())
-      .then((res) => setAdata([...adata, ...res.articles]));
+    // fetch(
+    //   `https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=${api1}`
+    // )
+    //   .then((res) => res.json())
+    //   .then((res) => {
+    //     console.log(res);
+    //     setAdata(res.articles);
+    //   });
+    // console.log(adata);
+    // fetch(` https://newsapi.org/v2/everything?q=bitcoin&apiKey=${api1}`)
+    //   .then((res) => res.json())
+    //   .then((res) => setAdata([...adata, ...res.articles]));
 
-    fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${api1}`)
-      .then((res) => res.json())
-      .then((res) => setAdata([...adata, ...res.articles]));
-    fetch(
-      `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${api1}`
-    )
-      .then((res) => res.json())
-      .then((res) => setAdata([...adata, ...res.articles]));
+    // fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${api1}`)
+    //   .then((res) => res.json())
+    //   .then((res) => setAdata([...adata, ...res.articles]));
+    // fetch(
+    //   `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${api1}`
+    // )
+    //   .then((res) => res.json())
+    //   .then((res) => setAdata([...adata, ...res.articles]));
     console.log("hallo");
   }, []);
 
@@ -108,7 +108,7 @@ export const Landingleft = () => {
           </div>
         )
       )}
-      {adata.map((eblog, idx) => (
+      {/* {adata.map((eblog, idx) => (
         <div key={idx} className={styles.ll2}>
           <div className={styles.ll3}>
             <div className={styles.ll4}>
@@ -167,7 +167,7 @@ export const Landingleft = () => {
             <img src={eblog.urlToImage} alt="" />
           </div>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };

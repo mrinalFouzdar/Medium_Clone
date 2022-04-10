@@ -5,7 +5,7 @@
   justify-content: center !important;
   background-color: rgb(196, 226, 255);
   padding: 0px 6vw;
-  border-top: 1px solid black;
+  /* border-top: 1px solid black; */
   border-bottom: 1px solid black;
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

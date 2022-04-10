@@ -22,6 +22,8 @@ const Div = styled.div`
     margin-left: 150px;
     display: flex;
     align-items: center;
+    /* position: absolute; */
+    z-index: -1;
   }
 
   .writeIcon {
@@ -57,6 +59,7 @@ const Div = styled.div`
     color: white;
     background-color: teal;
     padding: 10px;
+
     border: none;
     border-radius: 10%;
     cursor: pointer;

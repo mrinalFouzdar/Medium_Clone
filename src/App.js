@@ -8,12 +8,10 @@ import Membership from "./Components/Membership/Membership";
 import { Write } from "./Components/Write/Write";
 import WriteBlog from "./Components/BlogWrite/WriteBlog";
 import { Signup } from "./Components/Loginpage/Signup";
-import AfterLogincomp from "./LoginComp/AfterLogincomp";
+
 import { Loading } from "./Components/Loginpage/Loading";
 import { Lastblog } from "./Components/Afterpublish/Lastblog";
-import { Leftafterpublish } from "./Components/Afterpublish/Leftafterpublish";
-import { Landingright } from "./Components/Landingpage/Landingright";
-import { Landingleft } from "./Components/Landingpage/Landingleft";
+
 import SideBar from "./LoginComp/Sidebar";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,8 +23,8 @@ import { loadData, saveData } from "./Localstorage";
 import { isAuthorized } from "./Redux/IsAuth/action";
 import { Home } from "./AfterLogIn/Home.jsx";
 const Div = styled.div`
-  display: ${(props) => (props.Data ? "flex" : "block")};
-  justify-content: ${(props) => (props.Data ? "space-between" : "null")};
+  /* display: ${(props) => (props.Data ? "flex" : "block")};
+  justify-content: ${(props) => (props.Data ? "space-between" : "null")}; */
 `;
 const App = () => {
   const dispatch = useDispatch();
@@ -41,9 +39,40 @@ const App = () => {
   // Data = true;
   console.log(Data);
   return (
-    <Div Data={Data}>
-      {Data ? <Navbar2 /> : <Navbar />}
-      <Routes>
+    <>
+      {Data ? (
+        // <>
+        <Div Data={Data}>
+          <Navbar2 />
+
+          <Routes>
+            <Route path="/list" element={<List />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/WriteBlog" element={<WriteBlog />} />
+            <Route path="/YourStory" element={<YourStory />} />
+            <Route path="/publish" element={<Lastblog />} />
+            <Route path="/Notifications" element={<Notifications />} />
+          </Routes>
+          <SideBar />
+        </Div>
+      ) : (
+        <>
+          {" "}
+          <Navbar />
+          <Routes>
+            <Route exact path="/" element={<Landingpage />} />
+            <Route path="/ourStory" element={<OurStorymain />} />
+            <Route path="/memberShip" element={<Membership />} />
+            <Route path="/write" element={<Write />} />
+            <Route path="/logIn" element={<Login />} />
+            <Route path="/startIn" element={<Login />} />
+            <Route path="/register" element={<Signup />} />
+            <Route path="/loading" element={<Loading />} />
+          </Routes>
+        </>
+      )}
+
+      {/* <Routes>
         <Route path="/" element={<Landingpage />} />
         <Route path="/ourStory" element={<OurStorymain />} />
         <Route path="/memberShip" element={<Membership />} />
@@ -58,11 +87,11 @@ const App = () => {
         <Route path="/YourStory" element={<YourStory />} />
         <Route path="/publish" element={<Lastblog />} />
         <Route path="/Notifications" element={<Notifications />} />
-      </Routes>
+      </Routes> */}
       {/* <Lastblog /> */}
       {/* <YourStory /> */}
-      {Data ? <SideBar /> : null}
-    </Div>
+      {/* {Data ? <SideBar /> : null} */}
+    </>
   );
 };
 

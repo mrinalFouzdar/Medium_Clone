@@ -44,12 +44,12 @@ export const Lastblog = () => {
 
   setTimeout(() => {
     soln();
-  }, 7000);
+  }, 8000);
 
   React.useEffect(() => {
     getData();
   }, []);
-
+  // getData();
   console.log(bdata);
   // };
   const handleDelte = (id) => {

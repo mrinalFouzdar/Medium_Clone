@@ -41,6 +41,7 @@ let Nav = styled.div`
     width: 120px;
     background-color: black;
     padding: 5px;
+    height: 35px;
     /* padding-left:34px ; */
     align-items: center;
     text-align: center;
@@ -51,6 +52,7 @@ let Nav = styled.div`
 const StyledLink = styled(Link)`
   text-decoration: none;
   font-family: "Soehne web buch", sans-serif;
+
   /* color: rgb(0 0 0); */
   color: ${(props) =>
     props.color === "rgb(68, 121, 255)" ? "white" : "rgb(0 0 0)"};
@@ -67,6 +69,7 @@ const StyledLinklast = styled(Link)`
   color: white;
   font-size: 15px;
   line-height: 100%;
+  box-sizing: border-box;
 
   /* &:hover{
     text-decoration:underline ;
@@ -144,6 +147,9 @@ export default function Navbar() {
         </div>
 
         <div className="sDiv">
+          {/* <div className="childDiv">
+            <StyledLink to="/" color={color}></StyledLink>
+          </div> */}
           <div className="childDiv">
             <StyledLink to="/ourStory" color={color}>
               Our Story
